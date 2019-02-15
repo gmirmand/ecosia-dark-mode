@@ -1,0 +1,52 @@
+//  Enable media queries by default (to disable it, you have to override it to false after including this mixin
+$enable-media-queries: true;
+
+//
+// Respond-to mixin
+//
+// @param $name
+//
+// @author Benjamin Gondy <bgondy@webqam.fr>
+@mixin respond-to($name) {
+  @if ($enable-media-queries) {
+    @if ($name == xxs) {
+      @media only screen and (min-width: $breakpoint-xxs) {
+        @content;
+      }
+    } @else if ($name == xs) {
+      @media only screen and (min-width: $breakpoint-xs) {
+        @content;
+      }
+    } @else if ($name == s) {
+      @media only screen and (min-width: $breakpoint-s) {
+        @content;
+      }
+    } @else if ($name == m) {
+      @media only screen and (min-width: $breakpoint-m) {
+        @content;
+      }
+    } @else if ($name == l) {
+      @media only screen and (min-width: $breakpoint-l) {
+        @content;
+      }
+    } @else if ($name == xl) {
+      @media only screen and (min-width: $breakpoint-xl) {
+        @content;
+      }
+    } @else if ($name == fullHD) {
+      @media only screen and (min-width: $breakpoint-fullHD) {
+        @content;
+      }
+    }
+  }
+    //  Force use of the medium size for browsers that don't understand media queries
+  @else if ($name == m
+      OR $name == no-mq
+      OR $name == false
+      OR $name == ie8
+      OR $name == lte-ie8
+      OR $name == lt-ie8
+  ) {
+    @content;
+  }
+}

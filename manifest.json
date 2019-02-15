@@ -5,6 +5,7 @@
   "manifest_version": 2,
   "content_scripts": [{
     "matches": ["https://*.ecosia.org/*"],
-    "css": ["styles.css"]
+    "css": ["styles.css"],
+    "js": ["vendors.js","app.js"]
   }]
 }

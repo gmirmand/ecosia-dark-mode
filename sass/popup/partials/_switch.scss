@@ -1,24 +1,36 @@
+//HOVER-SLIDE TRANSITIONS
+$hover: all 0.2s ease-in;
+$slide: all 0.4s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+
 .switch-onoff__slide {
   display: inline-block;
   height: 24px;
   width: 48px;
-  box-shadow: inset 0 0 0 1px #ced3e1;
+  box-shadow: inset 0 0 0 1px $color-light;
   border-radius: 12px;
   transition: $hover;
   position: relative;
-  background-color: #f2f3f7;
+  background-color: $color-light;
   cursor: pointer;
   &.open {
-    .switch-onoff__button {
-      background-color: $grey;
-      transform: translateX(-24px) rotate(-90deg);
+    .switch-onoff {
+      &__button {
+        background-color: $color-primary;
+        transform: translateX(-24px);
+      }
+      &__light {
+        opacity: 1;
+      }
+      &__dark {
+        opacity: 0;
+      }
     }
   }
 }
 
 .switch-onoff__button {
   display: block;
-  background-color: $green;
+  background-color: $color-very-dark;
   width: 24px;
   height: 24px;
   border-radius: 13px;
@@ -27,13 +39,18 @@
   top: 0;
   transition: $slide;
   backface-visibility: hidden;
-  &:before {
-    content: "";
+  img {
     position: absolute;
-    width: 1px;
-    height: 10px;
-    left: 12px;
-    top: 7px;
-    background-color: $white;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: .33s;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    &.switch-onoff__light {
+      opacity: 0;
+    }
   }
 }

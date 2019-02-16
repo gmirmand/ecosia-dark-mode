@@ -2,7 +2,9 @@
 @import "../global/**/*.scss";
 
 body {
-  transition: .33s;
+  &, & div {
+    transition: background-color .33s;
+  }
 }
 
 .logos-container {
@@ -72,7 +74,7 @@ body.EDK__body {
     }
   }
 
-  .search-form-wrapper, .pill-inversed, .disclaimer {
+  .search-form-wrapper, .pill-inversed, .disclaimer, .section-title-pill {
     &, & input {
       background-color: transparent;
       border-color: $color-light-dark;
@@ -81,7 +83,17 @@ body.EDK__body {
     }
   }
 
-  .tag, .suggestion-list, .pill, .pagination-button, .icons-dropdown-list, .flags-dropdown-arrow, .dropdown-menu, .flags-dropdown-header, .flags-dropdown-body, .flags-dropdown-chosen, .flags-dropdown-more, .filter-trigger, .filter-list {
+  .section-title-pill {
+    background-color: $color-very-dark;
+  }
+
+  .section-title {
+    &:after {
+      background-color: $color-very-dark;
+    }
+  }
+
+  .tag, .thumbnail-video, .thumbnail-news, .thumbnail-item, .suggestion-list, .pill, .pagination-button, .icons-dropdown-list, .flags-dropdown-arrow, .dropdown-menu, .flags-dropdown-header, .flags-dropdown-body, .flags-dropdown-chosen, .flags-dropdown-more, .filter-trigger, .filter-list {
     background-color: $color-very-dark;
     border-color: $color-dark;
     box-shadow: 0 1px 4px 0 $color-very-dark;
@@ -117,12 +129,19 @@ body.EDK__body {
     }
   }
 
-  .entity, .sidebar-product-ad {
+  .entity, .sidebar-product-ad, .site-footer, hr {
     background-color: $color-very-dark;
     border-color: $color-dark;
     box-shadow: 0 1px 4px 0 $color-very-dark;
     .entity-title {
       color: $color-light;
+    }
+  }
+
+  .site-footer {
+    padding-top: 50px;
+    &:before {
+      display: none;
     }
   }
 
@@ -165,18 +184,16 @@ body.EDK__body {
     color: $color-light;
     z-index: -1;
   }
-  a {
+  a, .thumbnail-title {
     color: $color-primary;
     &:visited {
       color: darken($color-primary, 10%);
     }
   }
-  .cta-wrapper {
-    a {
-      background-color: $color-light;
-      &:hover {
-        background-color: darken($color-light, 10%);
-      }
+  .cta-wrapper a, .btn {
+    background-color: $color-light;
+    &:hover {
+      background-color: darken($color-light, 10%);
     }
   }
 }

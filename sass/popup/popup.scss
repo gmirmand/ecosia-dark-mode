@@ -1,20 +1,9 @@
 // Global sass
-@import "./global/**/*.scss";
-
-//FONT IMPORT
-//HOVER-SLIDE TRANSITIONS
-$hover: all 0.2s ease-in;
-$slide: all 0.4s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-//COLORS
-$grey: #4f4f4f;
-
-
-$white: #ffffff;
-$green: #39bda7;
+@import "../global/**/*.scss";
 
 //ELEMENTS
 .popup__body {
-  padding: 50px;
+  padding: 25px;
   text-align: center;
   @import "./partials/**/*.scss";
 }

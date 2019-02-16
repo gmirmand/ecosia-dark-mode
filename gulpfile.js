@@ -11,10 +11,10 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 sass.compiler = require('node-sass');
 
-function style() {
+function styleMain() {
     return (
         gulp
-            .src('./sass/**/*.scss')
+            .src('sass/main/**/*.scss')
             .pipe(sassGlob())
             .pipe(sass())
             .pipe(autoprefixer({
@@ -29,7 +29,25 @@ function style() {
     );
 }
 
-function javascriptVendors(){
+function stylePopup() {
+    return (
+        gulp
+            .src('sass/popup/**/*.scss')
+            .pipe(sassGlob())
+            .pipe(sass())
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions'],
+                cascade: false
+            }))
+            .pipe(sourcemaps.init())
+            .pipe(cleanCSS())
+            .pipe(sourcemaps.write())
+            .on("error", sass.logError)
+            .pipe(gulp.dest('./'))
+    );
+}
+
+function javascriptVendors() {
     return gulp
         .src('./js/vendors/**/*.js')
         .pipe(concat('vendors.js'))
@@ -38,25 +56,42 @@ function javascriptVendors(){
         .pipe(gulp.dest('./'));
 }
 
-function javascriptApp(){
+function javascriptMain() {
     return gulp
-        .src('./js/*.js')
+        .src('./js/main/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(sourcemaps.init())
-        .pipe(concat('app.js'))
+        .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./'));
 }
 
-function watch(){
-    gulp.watch('./sass/**/*.scss', style);
-    gulp.watch('./js/**/*.js', javascriptVendors);
-    gulp.watch('./js/**/*.js', javascriptApp);
+function javascriptPopup() {
+    return gulp
+        .src('./js/popup/*.js')
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'))
+        .pipe(sourcemaps.init())
+        .pipe(concat('popup.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./'));
 }
 
-exports.style = style;
-exports.javascriptAppVendors = javascriptVendors;
-exports.javascriptApp = javascriptApp;
+function watch() {
+    gulp.watch('./sass/global/**/*.scss', gulp.parallel(stylePopup, styleMain));
+    gulp.watch('./sass/popup/**/*.scss', stylePopup);
+    gulp.watch('./sass/main/**/*.scss', styleMain);
+    gulp.watch('./js/**/*.js', javascriptVendors);
+    gulp.watch('./js/**/*.js', javascriptPopup);
+    gulp.watch('./js/**/*.js', javascriptMain);
+}
+
+exports.styleMain = styleMain;
+exports.stylePopup = stylePopup;
+exports.javascriptVendors = javascriptVendors;
+exports.javascriptPopup = javascriptVendors;
+exports.javascriptMain = javascriptMain;
 exports.watch = watch;

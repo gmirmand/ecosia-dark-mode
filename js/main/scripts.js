@@ -6,7 +6,7 @@ main.General = function () {
 
 main.General.prototype = {
     init: function () {
-        EDK.init();
+        GlobalEDK.init();
     }
 };
 
@@ -16,15 +16,15 @@ $(document).ready(function () {
 });
 
 //Start
-var EDK;
-EDK = {
+var GlobalEDK;
+GlobalEDK = {
     //Init
     init: function () {
         console.log("test");
-        EDK.DK_class();
+        GlobalEDK.DK_class();
     },
     DK_class: function(){
-        $('body').addClass('EDK');
+        $('body').addClass('GlobalEDK');
         console.log("test");
     }
 };

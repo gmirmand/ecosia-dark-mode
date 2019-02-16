@@ -9,7 +9,7 @@ Because Dark-mode is cool
 
 # Installation
 
-It is a very basic chrome extension, enjoy the Chrome documentation to help you. For the css, I use gulp to compile my css.
+It is a very basic chrome extension, enjoy the Chrome documentation to help you. I use gulp to compile my scss.
 
 
 > npm i  

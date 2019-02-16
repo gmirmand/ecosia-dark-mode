@@ -36,8 +36,9 @@ For the HTML of the popup, it's simply in ecosia-dark-mode.html
 
 # Contributors
 
-* G. Mirmand #Huroy | [Twitter](https://twitter.com/Huroyy) | [GitHub](https://github.com/gmirmand)  
-* Cobra le sang
+* G. Mirmand #Huroy (developer) | [Twitter](https://twitter.com/Huroyy) | [GitHub](https://github.com/gmirmand)  
+* Cobra (le sang)
+* G. Allary (Paint professional)
 
 # Ideas
 

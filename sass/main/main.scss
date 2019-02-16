@@ -1,6 +1,182 @@
 // Global sass
 @import "../global/**/*.scss";
 
-.EDK__poppin {
-  background-color: red;
+body {
+  transition: .33s;
+}
+
+.logos-container {
+  img {
+    display: none;
+  }
+}
+
+body.EDK__body {
+  & .search-header {
+    background-color: $color-very-dark;
+  }
+  &, & .navbar-row, & .result-wrapper {
+    background-color: $color-dark;
+    color: $color-light;
+    border-color: $color-very-dark;
+    .logos-container {
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      svg {
+        display: none;
+      }
+    }
+    .info-section {
+      background-image: inherit;
+      position: relative;
+      .bg-filter {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjQ5MiIgdmlld0JveD0iMCAwIDEyMDAgNDkyIj48cGF0aCBmaWxsPSIjRTZGMkYyIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0tLjM3MyAwYy0yLjM1NCAzMjguNjMtMi4xNTMgNDkyLjYzLjYwMiA0OTEuOTk4IDIzLjYtNS40MTUgNjQuNDY4LTI0LjEyOCAxNDMuMzc3LTMxLjQzOCA5Mi43MjctOC41OSAyMzkuODA3LTI5LjY1NyAzMTguNTE3LTU5LjMgNzguNzEtMjkuNjQxIDIwMS4yOTctMTQ1LjM4OCAzNzkuMDM1LTE3My41NTIgMTQ4LjU5LTIzLjU0NSAyNzMuMDcyLTEwLjIzMiAzNjAuMTQ1LTYwLjQzIDIuNjE2LTEuNTA5LTMuMTA2LTU3LjQ4OS0xLjI3My01OS4xMzYtMi4wMDgtNi4zNjcuNzc0LTIxLjAyOCAxLjI3My00My45ODIuMjQ0LTExLjI2My4yNDQtMzIuNjUgMC02NC4xNkgtLjM3M3oiLz48L3N2Zz4K') bottom no-repeat;
+        background-size: cover;
+        z-index: -1;
+      }
+    }
+    .search-background, .bg-filter, .social-section {
+      filter: grayscale(50%) saturate(0) opacity(0.2) brightness(50%) contrast(200%);
+      &:before {
+        display: none;
+      }
+    }
+
+    .index-footer, .small-footer, .card {
+      background-color: $color-very-dark;
+      .content {
+        color: $color-light;
+      }
+    }
+  }
+  .navbar-link {
+    &, &:active, &:hover, &:visited {
+      color: $color-light;
+    }
+  }
+  .result-title {
+    color: $color-secondary;
+    &:visited {
+      color: darken($color-secondary, 10%);
+    }
+  }
+
+  .search-form-wrapper, .pill-inversed, .disclaimer {
+    &, & input {
+      background-color: transparent;
+      border-color: $color-light-dark;
+      border-radius: 10px;
+      color: $color-light;
+    }
+  }
+
+  .tag, .suggestion-list, .pill, .pagination-button, .icons-dropdown-list, .flags-dropdown-arrow, .dropdown-menu, .flags-dropdown-header, .flags-dropdown-body, .flags-dropdown-chosen, .flags-dropdown-more, .filter-trigger, .filter-list {
+    background-color: $color-very-dark;
+    border-color: $color-dark;
+    box-shadow: 0 1px 4px 0 $color-very-dark;
+    color: $color-light;
+    transition: .33s;
+    &:hover {
+      background-color: $color-light-dark;
+      border-color: $color-light-dark;
+    }
+    li {
+      background-color: $color-light-dark;
+      &.suggestion-item {
+        border-color: $color-very-dark;
+      }
+      &, &:hover, &:active, &:focus, &:visited, &.selected {
+        color: $color-light;
+        border-color: $color-light-dark;
+        background-color: $color-dark;
+        a {
+          color: $color-light;
+        }
+      }
+      &:hover, &:active, &:focus, &:visited {
+        background-color: $color-light-dark;
+      }
+
+      .suggestion-highlight {
+        color: $color-light;
+      }
+      a.suggestion-link {
+        color: $color-light;
+      }
+    }
+  }
+
+  .entity, .sidebar-product-ad {
+    background-color: $color-very-dark;
+    border-color: $color-dark;
+    box-shadow: 0 1px 4px 0 $color-very-dark;
+    .entity-title {
+      color: $color-light;
+    }
+  }
+
+  .filter-list {
+    background-color: $color-dark;
+    a {
+      &:hover, &:visited, &:focus, &:active {
+        background-color: $color-very-dark;
+      }
+    }
+  }
+
+  .tag-title {
+    color: $color-light;
+  }
+
+  .pill:after {
+    display: none;
+  }
+  .pagination-button {
+    background-image: inherit;
+    border-radius: 50%;
+    &:hover {
+      background-image: inherit;
+    }
+  }
+
+  .search-form {
+    border-color: $color-light-dark;
+    &, & input {
+      background-color: transparent;
+      color: $color-light;
+      &::placeholder {
+        color: darken($color-light, 10%);
+      }
+    }
+  }
+  form button svg {
+    filter: brightness(0) invert(1);
+    color: $color-light;
+    z-index: -1;
+  }
+  a {
+    color: $color-primary;
+    &:visited {
+      color: darken($color-primary, 10%);
+    }
+  }
+  .cta-wrapper {
+    a {
+      background-color: $color-light;
+      &:hover {
+        background-color: darken($color-light, 10%);
+      }
+    }
+  }
 }

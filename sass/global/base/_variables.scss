@@ -1,7 +1,7 @@
 /*COLOR*/
-$color-dark : #2d2d2d;
-$color-dark-2 : #222222;
-$color-dark-3 : #4b4a4b;
-$color-light: lightgrey;
-$color-primary: #36acb8;
-$color-secondary: #d3da31;
+$color-dark : #131A2F;
+$color-very-dark : darken($color-dark, 5%);
+$color-light-dark : lighten($color-dark, 5%);
+$color-light: lighten($color-dark, 75%);
+$color-primary: #16877F;
+$color-secondary: #91A5C6;

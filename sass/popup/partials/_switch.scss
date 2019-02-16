@@ -1,0 +1,39 @@
+.switch-onoff__slide {
+  display: inline-block;
+  height: 24px;
+  width: 48px;
+  box-shadow: inset 0 0 0 1px #ced3e1;
+  border-radius: 12px;
+  transition: $hover;
+  position: relative;
+  background-color: #f2f3f7;
+  cursor: pointer;
+  &.open {
+    .switch-onoff__button {
+      background-color: $grey;
+      transform: translateX(-24px) rotate(-90deg);
+    }
+  }
+}
+
+.switch-onoff__button {
+  display: block;
+  background-color: $green;
+  width: 24px;
+  height: 24px;
+  border-radius: 13px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: $slide;
+  backface-visibility: hidden;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 10px;
+    left: 12px;
+    top: 7px;
+    background-color: $white;
+  }
+}

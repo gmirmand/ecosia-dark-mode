@@ -9,14 +9,12 @@ Because Dark-mode is cool
 
 # Installation
 
-It is a very basic chrome extension, enjoy the Chrome documentation to help you. I use gulp to compile my scss.
+It is a very basic chrome extension, enjoy the Chrome documentation to help you.
 
+**Gulp auto compiling separate js/css**
 
 > npm i  
 gulp watch
-
-
-**Gulp auto compiling separate js/css**
 
 #### JS 
 > vendors.js (use everywhere)  

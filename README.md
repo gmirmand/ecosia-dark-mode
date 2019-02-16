@@ -16,8 +16,12 @@ It is a very basic chrome extension, enjoy the Chrome documentation to help you.
 > npm i  
 gulp watch
 
+**After the "gulp watch", work in the "sass" and/or "js" folder.**  
+Gulp takes care of compiling into .css and .js files properly.  
+
+### Explanation of compiled files
 #### JS 
-> vendors.js (use everywhere)  
+> vendors.js (use everywhere) < Contains used js libraries such as jquery  
 > main.js (use on the page)  
 > popup.js (use in the popup)  
 
@@ -27,6 +31,8 @@ gulp watch
 > popup.css (css of the popup)  
 
 **NOTE** : Both .css include "global" folder with globals scss vars/mixins/helpers
+
+For the HTML of the popup, it's simply in ecosia-dark-mode.html
 
 # Contributors
 

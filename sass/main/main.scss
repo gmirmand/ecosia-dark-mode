@@ -5,6 +5,12 @@ body {
   &, & div {
     transition: background-color .33s;
   }
+  .onDK {
+    display: none;
+  }
+  .offDK {
+    display: block;
+  }
 }
 
 .logos-container {
@@ -14,6 +20,12 @@ body {
 }
 
 body.EDK__body {
+  .onDK {
+    display: block;
+  }
+  .offDK {
+    display: none;
+  }
   & .search-header {
     background-color: $color-very-dark;
   }
@@ -93,7 +105,7 @@ body.EDK__body {
     }
   }
 
-  .tag, .thumbnail-video, .thumbnail-news, .thumbnail-item, .suggestion-list, .pill, .pagination-button, .icons-dropdown-list, .flags-dropdown-arrow, .dropdown-menu, .flags-dropdown-header, .flags-dropdown-body, .flags-dropdown-chosen, .flags-dropdown-more, .filter-trigger, .filter-list {
+  .tag, .typeahead, .thumbnail-video, .thumbnail-news, .thumbnail-item, .suggestion-list, .pill, .pagination-button, .icons-dropdown-list, .flags-dropdown-arrow, .dropdown-menu, .flags-dropdown-header, .flags-dropdown-body, .flags-dropdown-chosen, .flags-dropdown-more, .filter-trigger, .filter-list {
     background-color: $color-very-dark;
     border-color: $color-dark;
     box-shadow: 0 1px 4px 0 $color-very-dark;

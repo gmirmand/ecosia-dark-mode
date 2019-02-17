@@ -9,6 +9,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var zip = require('gulp-zip');
 sass.compiler = require('node-sass');
 
 function styleMain() {
@@ -89,9 +90,16 @@ function watch() {
     gulp.watch('./js/**/*.js', javascriptMain);
 }
 
+async function compile() {
+    gulp.src(['images/*','ecosia-dark-mode.html','global.css','main.css','main.js','manifest.json','popup.css','popup.js','vendors.js'])
+        .pipe(zip('ecosia-dark-mode.zip'))
+        .pipe(gulp.dest('./'))
+}
+
 exports.styleMain = styleMain;
 exports.stylePopup = stylePopup;
 exports.javascriptVendors = javascriptVendors;
 exports.javascriptPopup = javascriptVendors;
 exports.javascriptMain = javascriptMain;
 exports.watch = watch;
+exports.compile = compile;

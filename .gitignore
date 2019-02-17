@@ -164,3 +164,6 @@ fabric.properties
 .idea/sonarlint
 
 # End of https://www.gitignore.io/api/node,phpstorm
+
+#Compiled file
+ecosia-dark-mode.zip

@@ -46,23 +46,26 @@ PopupEDK = {
     switchBtn: function () {
         var button = $('.switch-onoff__slide');
         chrome.storage.sync.get(['dk'], function (result) {
-            if (result.dk === 'enabled') {
-                chrome.storage.sync.set({dk: 'disabled'});
+            if (result.dk === 'disabled') {
+                chrome.storage.sync.set({dk: 'enabled'});
                 button.removeClass('open');
             } else {
-                chrome.storage.sync.set({dk: 'enabled'});
+                chrome.storage.sync.set({dk: 'disabled'});
                 button.addClass('open');
             }
         });
         PopupEDK.logStorage();
     },
-    onPopupOpen: function(){
+    onPopupOpen: function () {
         var button = $('.switch-onoff__slide');
         chrome.storage.sync.get(['dk'], function (result) {
             if (result.dk === 'disabled') {
+                button.addClass('open');
+            } else if (result.dk === 'undefined') {
+                chrome.storage.sync.set({dk: 'disabled'});
                 button.removeClass('open');
             } else {
-                button.addClass('open');
+                button.removeClass('open');
             }
         });
     }

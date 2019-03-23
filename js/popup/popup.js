@@ -30,10 +30,12 @@ PopupEDK = {
             e.preventDefault();
             chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
                 chrome.tabs.sendRequest(tabs[0].id, {action: "switch"}, function (resp) {
-                    if (resp.done === "switch") {
-                        PopupEDK.switchBtn();
-                    } else {
-                        console.log(resp);
+                    if (resp) {
+                        if (resp.done === "switch") {
+                            PopupEDK.switchBtn();
+                        } else {
+                            console.log(resp);
+                        }
                     }
                 });
             });
@@ -81,10 +83,12 @@ PopupEDK = {
 
             chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
                 chrome.tabs.sendRequest(tabs[0].id, {action: "redirect"}, function (resp) {
-                    if (resp.done === "redirect") {
-                        console.log('Redirected');
-                    } else {
-                        console.log(resp);
+                    if (resp) {
+                        if (resp.done === "redirect") {
+                            console.log('Redirected');
+                        } else {
+                            console.log(resp);
+                        }
                     }
                 });
             });

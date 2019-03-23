@@ -2,8 +2,21 @@
 @import "../global/**/*.scss";
 
 //ELEMENTS
-.popup__body {
-  padding: 25px;
-  text-align: center;
-  @import "./partials/**/*.scss";
+.popup {
+  &__body {
+    padding: 15px;
+    text-align: center;
+    @import "./partials/**/*.scss";
+    min-width: #{100vh * (9/16)};
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
 }

@@ -1,19 +1,31 @@
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="popup.css">
-        <script src="vendors.js"></script>
-        <script src="popup.js"></script>
-    </head>
-    <body class="popup__body">
-        <div class="popup__container">
-            <div class="switch-onoff__container">
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="popup.css">
+    <script src="vendors.js"></script>
+    <script src="popup.js"></script>
+    <title>Ecosia dark-mode Popup</title>
+</head>
+<body class="popup__body">
+<div class="popup__container">
+    <div class="switch-onoff__container">
                   <span class="switch-onoff__slide">
                     <i class="switch-onoff__button">
                         <img src="images/switch-dark.png" alt="switch dark" class="switch-onoff__dark"/>
                         <img src="images/switch-light.png" alt="switch light" class="switch-onoff__light"/>
                     </i>
                   </span>
-            </div>
+    </div>
+    <div class="search__container">
+        <form action="https://www.google.com/search" method="get" id="google-search">
+            <label>
+                <input type="text" name="q" class="search__input"/>
+                <input type="submit" value="Recherche Google" class="search__submit"/>
+            </label>
+        </form>
+        <div class="search__explication">
+            <span>Ecosia searches can sometimes be less precise than those of google. For more specific searches you can use this google search box. (But you will not plant a tree ... it's a shame)</span>
         </div>
-    </body>
+    </div>
+</div>
+</body>
 </html>

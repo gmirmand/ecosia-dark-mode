@@ -7,6 +7,7 @@ main.General = function () {
 main.General.prototype = {
     init: function () {
         PopupEDK.init();
+        PopupEDK.googleSearch();
     }
 };
 
@@ -67,6 +68,26 @@ PopupEDK = {
             } else {
                 button.removeClass('open');
             }
+        });
+    },
+    googleSearch: function () {
+        $('#google-search').on('submit', function () {
+            var action = $(this).attr('action');
+            $input = $(this).find('.search__input');
+            var name = $input.attr('name');
+            var value = $input.val();
+            var url = action + '?' + name + '=' + value;
+            chrome.storage.sync.set({url: url});
+
+            chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+                chrome.tabs.sendRequest(tabs[0].id, {action: "redirect"}, function (resp) {
+                    if (resp.done === "redirect") {
+                        console.log('Redirected');
+                    } else {
+                        console.log(resp);
+                    }
+                });
+            });
         });
     }
 };

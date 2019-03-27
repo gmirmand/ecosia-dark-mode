@@ -1,12 +1,30 @@
-<html lang="en">
+<!doctype html>
+<html>
 <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* https://* 'unsafe-inline'; script-src 'self' http://* https://* 'unsafe-inline' 'unsafe-eval'" />
     <link rel="stylesheet" type="text/css" href="popup.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="vendors.js"></script>
     <script src="popup.js"></script>
     <title>Ecosia dark-mode Popup</title>
 </head>
 <body class="popup__body">
 <div class="popup__container">
+    <div class="warning__container d-none">
+        <div class="alert alert-warning" id="alert-1" role="alert">
+            <b>The dark-mode does not work on the "new tab"</b> but pages on <span class="badge badge-light">ecosia.org</span> domain for the moment. [...]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="alert alert-info" id="alert-2" role="alert">
+            [...] If you do not use the "new tab" page's features, <b>we recommend you to redirect the new tabs page</b> to <span class="badge badge-light">www.ecosia.org</span> with the <span class="badge badge-light">"New Tab Redirect"</span> chrome extension for example.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
     <div class="switch-onoff__container">
                   <span class="switch-onoff__slide">
                     <i class="switch-onoff__button">

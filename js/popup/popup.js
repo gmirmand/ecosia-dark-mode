@@ -8,6 +8,7 @@ main.General.prototype = {
     init: function () {
         PopupEDK.init();
         PopupEDK.googleSearch();
+        PopupEDK.closeAlert();
     }
 };
 
@@ -61,16 +62,18 @@ PopupEDK = {
     },
     onPopupOpen: function () {
         var button = $('.switch-onoff__slide');
-        chrome.storage.sync.get(['dk'], function (result) {
-            if (result.dk === 'disabled') {
-                button.addClass('open');
-            } else if (result.dk === 'undefined') {
-                chrome.storage.sync.set({dk: 'disabled'});
-                button.removeClass('open');
-            } else {
-                button.removeClass('open');
-            }
-        });
+        if (chrome.storage !== undefined) {
+            chrome.storage.sync.get(['dk'], function (result) {
+                if (result.dk === 'disabled') {
+                    button.addClass('open');
+                } else if (result.dk === 'undefined') {
+                    chrome.storage.sync.set({dk: 'disabled'});
+                    button.removeClass('open');
+                } else {
+                    button.removeClass('open');
+                }
+            });
+        }
     },
     googleSearch: function () {
         $('#google-search').on('submit', function () {
@@ -93,5 +96,33 @@ PopupEDK = {
                 });
             });
         });
-    }
+    },
+    closeAlert: function () {
+        var $allAlerts = $('.alert'),
+            chromeStorageAlerts = [];
+        if (chrome.storage !== undefined) {
+            chrome.storage.sync.get(['alerts'], function (result) {
+                if (result.alerts !== undefined)
+                    chromeStorageAlerts = result.alerts;
+                if (chromeStorageAlerts !== undefined) {
+                    $.each(chromeStorageAlerts, function(i, value) {
+                        $('#' + value).addClass('d-none');
+                    });
+                }
+            });
+        }
+
+        setTimeout(function(){
+            if($allAlerts.length !== chromeStorageAlerts.length){
+                $('.warning__container').removeClass('d-none');
+            }
+        }, 250);
+
+        $allAlerts.on('closed.bs.alert', function () {
+            if (chrome.storage !== undefined) {
+                chromeStorageAlerts.push(this.id);
+                chrome.storage.sync.set({alerts: chromeStorageAlerts});
+            }
+        });
+    },
 };

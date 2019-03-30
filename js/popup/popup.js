@@ -136,7 +136,7 @@ PopupEDK = {
 
         function callback(tabs) {
             url = tabs[0].url; // there will be only one in this array
-            self.checkDomain(url)
+            self.checkDomain(url);
         }
 
         chrome.tabs.query(query, callback);

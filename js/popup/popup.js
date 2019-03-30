@@ -9,6 +9,7 @@ main.General.prototype = {
         PopupEDK.init();
         PopupEDK.googleSearch();
         PopupEDK.closeAlert();
+        PopupEDK.getTabDomain();
     }
 };
 
@@ -125,4 +126,19 @@ PopupEDK = {
             }
         });
     },
+    checkDomain: function(url){
+        if(url.indexOf('ecosia.org') === -1){
+          $('.popup__disabled, .popup__container').toggleClass('d-none');
+      }
+    },
+    getTabDomain: function(){
+        var query = { active: true, currentWindow: true }, self = this;
+
+        function callback(tabs) {
+            url = tabs[0].url; // there will be only one in this array
+            self.checkDomain(url)
+        }
+
+        chrome.tabs.query(query, callback);
+    }
 };

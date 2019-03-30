@@ -12,6 +12,9 @@ var uglify = require('gulp-uglify');
 var zip = require('gulp-zip');
 sass.compiler = require('node-sass');
 
+var fs = require('fs');
+var packageInfos = JSON.parse(fs.readFileSync('./package.json'));
+
 var paths = {
     sass: {
         src: {
@@ -37,7 +40,7 @@ var paths = {
     },
     dest: {
         main: './dist/',
-        compile: './'
+        compile: './compile/'
     }
 };
 
@@ -125,7 +128,7 @@ async function compile() {
     gulp.src([
         paths.dest.main + '/**'
     ])
-        .pipe(zip('ecosia-dark-mode.zip'))
+        .pipe(zip(packageInfos.name + '-' + new Date().getTime() + '-v' + packageInfos.version.replace(/\./g,'') + '.zip'))
         .pipe(gulp.dest(paths.dest.compile))
 }
 

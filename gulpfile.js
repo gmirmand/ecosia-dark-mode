@@ -91,7 +91,7 @@ function watch() {
 }
 
 async function compile() {
-    gulp.src(['images/*','ecosia-dark-mode.html','global.css','main.css','main.js','manifest.json','popup.css','popup.js','vendors.js'])
+    gulp.src(['./assets/**','ecosia-dark-mode.html','global.css','main.css','main.js','manifest.json','popup.css','popup.js','vendors.js'])
         .pipe(zip('ecosia-dark-mode.zip'))
         .pipe(gulp.dest('./'))
 }

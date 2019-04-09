@@ -33,7 +33,7 @@ GlobalEDK = {
     },
     EDK_image: function () {
         //Logo on main page
-        $('.logos-container a').append(
+        $('.logos-container a').html(
             '<img src="https://i.ibb.co/hdLbcZC/logo-ecosia-dark-full.png" alt="Ecosia" border="0">'
         );
 

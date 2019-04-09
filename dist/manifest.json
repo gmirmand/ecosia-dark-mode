@@ -27,7 +27,6 @@
     "128": "images/logo-ecosia-dark-128.png"
   },
   "permissions": [
-    "storage",
-    "tabs"
+    "storage"
   ]
 }

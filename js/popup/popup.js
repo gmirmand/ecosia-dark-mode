@@ -9,7 +9,7 @@ main.General.prototype = {
         PopupEDK.init();
         PopupEDK.googleSearch();
         PopupEDK.closeAlert();
-        PopupEDK.getTabDomain();
+        PopupEDK.showNoDomainAlert();
     }
 };
 
@@ -106,15 +106,15 @@ PopupEDK = {
                 if (result.alerts !== undefined)
                     chromeStorageAlerts = result.alerts;
                 if (chromeStorageAlerts !== undefined) {
-                    $.each(chromeStorageAlerts, function(i, value) {
+                    $.each(chromeStorageAlerts, function (i, value) {
                         $('#' + value).addClass('d-none');
                     });
                 }
             });
         }
 
-        setTimeout(function(){
-            if($allAlerts.length !== chromeStorageAlerts.length){
+        setTimeout(function () {
+            if ($allAlerts.length !== chromeStorageAlerts.length) {
                 $('.warning__container').removeClass('d-none');
             }
         }, 250);
@@ -126,19 +126,32 @@ PopupEDK = {
             }
         });
     },
-    checkDomain: function(url){
-        if(url.indexOf('ecosia.org') === -1){
-          $('.popup__disabled, .popup__container').toggleClass('d-none');
-      }
-    },
-    getTabDomain: function(){
-        var query = { active: true, currentWindow: true }, self = this;
+    showNoDomainAlert: function () {
 
-        function callback(tabs) {
-            url = tabs[0].url; // there will be only one in this array
-            self.checkDomain(url);
-        }
+        var tryConnection = new Promise(function (resolve, reject) {
+            chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+                chrome.tabs.sendRequest(tabs[0].id, {action: "testConnection"}, function (resp) {
+                    if (resp) {
+                        if (resp.done === "ConnectionSuccess") {
+                            resolve('ConnectionSuccess');
+                        } else {
+                            reject(resp);
+                        }
+                    } else {
+                        reject('ConnectionFailed');
+                    }
+                });
+            });
+        });
 
-        chrome.tabs.query(query, callback);
+        tryConnection.then(
+            function (value) {
+                console.log(value);
+            }).catch(
+            function (error) {
+                console.log(error);
+                $('.popup__disabled, .popup__container').toggleClass('d-none');
+            }
+        );
     }
 };

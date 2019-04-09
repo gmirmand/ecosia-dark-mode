@@ -45,12 +45,15 @@ GlobalEDK = {
     PopupListener: function () {
         chrome.extension.onRequest.addListener(
             function (request, sender, sendResponse) {
+
                 console.log(request.action);
                 switch (request.action) {
+
                     case "switch":
                         $('body').toggleClass('EDK__body');
                         sendResponse({done: 'switch'});
                         break;
+
                     case "redirect":
                         chrome.storage.sync.get(['url'], function (result) {
                             var url = result.url;
@@ -60,6 +63,11 @@ GlobalEDK = {
                             sendResponse({done: 'redirect to' + url});
                         });
                         break;
+
+                    case "testConnection":
+                        sendResponse({done: 'ConnectionSuccess'});
+                        break;
+
                     default:
                         sendResponse({done: 'no action'});
                 }

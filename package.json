@@ -1,6 +1,6 @@
 {
   "name": "ecosia-dark-mode",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "gulp of the ecosia dark mode",
   "main": "index.js",
   "scripts": {

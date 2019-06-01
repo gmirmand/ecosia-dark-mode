@@ -32,8 +32,7 @@ GlobalEDK = {
         });
     },
     EDK_image: function () {
-        //Logo on main page
-        $('.logos-container a').html(
+        $('.logos-container a').append(
             '<img src="https://i.ibb.co/hdLbcZC/logo-ecosia-dark-full.png" alt="Ecosia" border="0">'
         );
 
@@ -45,8 +44,6 @@ GlobalEDK = {
     PopupListener: function () {
         chrome.extension.onRequest.addListener(
             function (request, sender, sendResponse) {
-
-                console.log(request.action);
                 switch (request.action) {
 
                     case "switch":

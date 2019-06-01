@@ -39,6 +39,16 @@ body:not(.EDK__body) {
     }
   }
 
+  .js-treecount-popover {
+    background-color: $color-light-dark !important;
+  }
+
+  .notifications-banner-close {
+    &:after {
+      background-color: $color-very-dark;
+    }
+  }
+
   .search-header.search-header-inversed, .search-header.search-header-show {
     box-shadow: 0 0 0 0;
   }
@@ -323,9 +333,7 @@ body:not(.EDK__body) {
     }
   }
   form button svg {
-    filter: brightness(0) invert(1);
-    color: $color-light;
-    z-index: -1;
+    @include invert();
   }
   a, .thumbnail-title {
     color: $color-primary;

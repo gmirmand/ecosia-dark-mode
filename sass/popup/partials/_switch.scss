@@ -6,11 +6,11 @@ $slide: all 0.4s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
   display: inline-block;
   height: 24px;
   width: 48px;
-  box-shadow: inset 0 0 0 1px $color-light;
+  box-shadow: inset 0 0 0 1px $color-very-dark;
   border-radius: 12px;
   transition: $hover;
   position: relative;
-  background-color: $color-light;
+  background-color: $color-very-dark;
   cursor: pointer;
   &.open {
     .switch-onoff {

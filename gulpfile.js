@@ -20,10 +20,12 @@ var paths = {
         src: {
             main: 'sass/main/**/*.scss',
             popup: 'sass/popup/**/*.scss',
+            newtab: 'sass/newtab/**/*.scss',
         },
         watch: {
             global: './sass/global/**/*.scss',
             popup: './sass/popup/**/*.scss',
+            newtab: './sass/newtab/**/*.scss',
             main: './sass/main/**/*.scss',
         }
     },
@@ -32,10 +34,12 @@ var paths = {
             vendors: './js/vendors/**/*.js',
             main: './js/main/*.js',
             popup: './js/popup/*.js',
+            newtab: './js/newtab/*.js',
         },
         watch: {
             main: './js/main/*.js',
             popup: './js/popup/*.js',
+            newtab: './js/newtab/*.js',
         }
     },
     dest: {
@@ -66,6 +70,24 @@ function stylePopup() {
     return (
         gulp
             .src(paths.sass.src.popup)
+            .pipe(sassGlob())
+            .pipe(sass())
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions'],
+                cascade: false
+            }))
+            .pipe(sourcemaps.init())
+            .pipe(cleanCSS())
+            .pipe(sourcemaps.write())
+            .on("error", sass.logError)
+            .pipe(gulp.dest(paths.dest.main))
+    );
+}
+
+function styleNewtab() {
+    return (
+        gulp
+            .src(paths.sass.src.newtab)
             .pipe(sassGlob())
             .pipe(sass())
             .pipe(autoprefixer({
@@ -113,16 +135,30 @@ function javascriptPopup() {
         .pipe(gulp.dest(paths.dest.main));
 }
 
+function javascriptNewtab() {
+    return gulp
+        .src(paths.js.src.newtab)
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'))
+        .pipe(sourcemaps.init())
+        .pipe(concat('newtab.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.dest.main));
+}
+
 function watch() {
     gulp.watch(paths.sass.watch.global, gulp.parallel(stylePopup, styleMain));
     gulp.watch(paths.sass.watch.popup, stylePopup);
+    gulp.watch(paths.sass.watch.newtab, styleNewtab);
     gulp.watch(paths.sass.watch.main, styleMain);
-    gulp.watch([paths.js.watch.main, paths.js.watch.popup], javascriptVendors);
+    gulp.watch([paths.js.watch.main, paths.js.watch.popup, paths.js.watch.newtab], javascriptVendors);
     gulp.watch(paths.js.watch.main, javascriptMain);
     gulp.watch(paths.js.watch.popup, javascriptPopup);
+    gulp.watch(paths.js.watch.newtab, javascriptNewtab);
 }
 
-gulp.task('default', gulp.series(stylePopup, styleMain, javascriptVendors, javascriptMain, javascriptPopup));
+gulp.task('default', gulp.series(stylePopup, styleMain, styleNewtab, javascriptVendors, javascriptMain, javascriptNewtab, javascriptPopup));
 
 async function compile() {
     gulp.src([
@@ -134,8 +170,10 @@ async function compile() {
 
 exports.styleMain = styleMain;
 exports.stylePopup = stylePopup;
+exports.styleNewtab = styleNewtab;
 exports.javascriptVendors = javascriptVendors;
 exports.javascriptPopup = javascriptVendors;
+exports.javascriptNewtab = javascriptNewtab;
 exports.javascriptMain = javascriptMain;
 exports.watch = watch;
 exports.compile = compile;

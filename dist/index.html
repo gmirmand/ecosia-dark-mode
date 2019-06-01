@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- START Changed for DARK-MODE -->
+    <title>New tab - Ecosia dark-mode</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="newtab.css">
+    <script type="text/javascript" src="js/newtab.js"></script>
+    <script type="text/javascript" src="newtab.js"></script>
+    <!-- END Changed for DARK-MODE -->
+</head>
+<body>
+<div class="newtab-page">
+    <div class="logo">
+        <!-- START Changed for DARK-MODE -->
+        <img src="./images/logo-ecosia-dark-full.png" alt="logo ecosia"/>
+        <!-- END Changed for DARK-MODE -->
+    </div>
+    <form class="search-form js-search-form" id="searchForm" action="https://www.ecosia.org/search">
+        <div class="search-form-wrapper">
+            <input class="search-form-input" type="search" name="q" data-i18n="searchinput_placeholder"
+                   data-i18n-target="placeholder" value="" autocomplete="off" autocapitalize="off" autocorrect="off"
+                   spellcheck="false"/>
+            <input type="hidden" name="addon" value="chrome">
+            <input type="hidden" name="addonversion" value="">
+            <button class="search-form-button search-form-clear" type="reset">
+                <svg focusable="false" class="svg-icon icon-clear icon-light" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 22.83 22.83" width="13" height="13">
+                    <line x1="1.41" y1="1.41" x2="21.41" y2="21.41" fill="none" stroke="#000" stroke-miterlimit="10"
+                          stroke-width="4"/>
+                    <line x1="21.41" y1="1.41" x2="1.41" y2="21.41" fill="none" stroke="#000" stroke-miterlimit="10"
+                          stroke-width="4"/>
+                </svg>
+            </button>
+            <button class="search-form-button search-form-submit" type="submit">
+                <svg focusable="false" xmlns="http://www.w3.org/2000/svg" class="icon-search" viewBox="0 0 27.23 27.58"
+                     width="17" height="17">
+                    <line x1="16.84" y1="17.19" x2="25.81" y2="26.17" fill="none" stroke="#000" stroke-miterlimit="10"
+                          stroke-width="4"/>
+                    <path d="M567.8,1679.13A7.84,7.84,0,1,1,560,1687a7.85,7.85,0,0,1,7.84-7.84m0-3A10.84,10.84,0,1,0,578.64,1687a10.84,10.84,0,0,0-10.84-10.84h0Z"
+                          transform="translate(-556.96 -1676.13)" fill="#000"/>
+                </svg>
+            </button>
+        </div>
+    </form>
+    <ul id="lastVisited" class="newtab-visited"></ul>
+    <div id="topsitesNavigation"></div>
+    <div class="help-button">
+        <a target="_blank" href="https://ecosia.zendesk.com/hc/articles/115003338249">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                <g fill="none" fill-rule="evenodd">
+                    <circle cx="24" cy="24" r="24" fill="#4A4A4A"/>
+                    <g transform="translate(14 14)">
+                        <text fill="#FFF" font-family="Helvetica-Bold, Helvetica" font-size="16" font-weight="bold">
+                            <tspan x="5" y="16">?</tspan>
+                        </text>
+                        <circle cx="10" cy="10" r="11" stroke="#FFF" stroke-width="2"/>
+                    </g>
+                </g>
+            </svg>
+        </a>
+        <div class="help-button-tooltip">
+            <p data-i18n="info_popup_body"></p>
+        </div>
+        <div class="help-button-arrow"></div>
+    </div>
+    </a>
+    <!-- START Changed for DARK-MODE -->
+    <div class="infos">
+        <p class="infos__txt">
+            This extension is a "copy" of the <a
+                href="https://chrome.google.com/webstore/detail/ecosia-the-search-engine/eedlgdlajadkbbjoobobefphmfkcchfk"
+                target="_blank">ecosia extension</a>. The features are exactly the same. Only the design and the update
+            dates are different. No income is generated from this extension and all rights are reserved for ecosia
+            creators.
+            <br>
+            A translated version of the extension should arrive soon.
+        </p>
+        <p class="infos__author">
+            Ecosia Dark-mode extension propose by <a href="https://twitter.com/Huroyy" target="_blank"><b>Gaëtan Mirmand</b></a>
+        </p>
+    </div>
+    <!-- END Changed for DARK-MODE -->
+</div>
+</body>
+</html>

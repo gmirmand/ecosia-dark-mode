@@ -1,3 +1,9 @@
 @mixin grayscale() {
   filter: grayscale(50%) saturate(0) opacity(0.2) brightness(50%) contrast(200%);
 }
+
+@mixin invert() {
+  filter: brightness(0) invert(1);
+  color: $color-light;
+  z-index: -1;
+}

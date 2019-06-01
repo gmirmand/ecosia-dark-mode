@@ -4,9 +4,10 @@
 //ELEMENTS
 .popup {
   &__body {
-    padding: 15px;
+    padding: 3em 1.5em;
     text-align: center;
     @import "./partials/**/*.scss";
     min-width: 450px;
+    background-color: $color-light-dark;
   }
 }

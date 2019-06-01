@@ -41,21 +41,5 @@
   "permissions": [
     "storage",
     "topSites"
-  ],
-  "chrome_settings_overrides": {
-    "homepage": "https://www.ecosia.org/",
-    "search_provider": {
-      "name": "name.ecosia.org",
-      "keyword": "keyword.ecosia.org",
-      "search_url": "https://www.ecosia.org/search?q={searchTerms}",
-      "favicon_url": "https://cdn.ecosia.org/assets/images/ico/favicon.ico",
-      "image_url": "https://www.ecosia.org/images?q={searchTerms}",
-      "search_url_post_params": "search_lang=ecosia.org",
-      "suggest_url_post_params": "suggest_lang=ecosia.org",
-      "instant_url_post_params": "instant_lang=ecosia.org",
-      "image_url_post_params": "image_lang=ecosia.org",
-      "encoding": "UTF-8",
-      "is_default": true
-    }
-  }
+  ]
 }

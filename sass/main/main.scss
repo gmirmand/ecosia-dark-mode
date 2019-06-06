@@ -115,9 +115,21 @@ body:not(.EDK__body) {
         display: none;
       }
     }
+
+    .social-section {
+      .background {
+        @include grayscale();
+      }
+    }
+
     .info-section {
       background-image: inherit;
       position: relative;
+
+      .background {
+        display: none;
+      }
+
       .bg-filter {
         position: absolute;
         height: 100%;

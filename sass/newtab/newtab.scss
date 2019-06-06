@@ -13,6 +13,10 @@ body {
   }
 }
 
+.disclaimer, .disclaimer input, .pill-inversed, .pill-inversed input, .search-form-wrapper, .search-form-wrapper input, .section-title-pill, .section-title-pill input {
+  background-color: $color-very-dark !important;
+}
+
 .search-form {
   border-color: $color-light-dark;
   &, & input {
@@ -128,11 +132,6 @@ li {
 .infos {
   color: $color-light;
   opacity: 0.2;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
   padding: 1em 2em;
   box-sizing: border-box;
   font-size: 0.8rem;

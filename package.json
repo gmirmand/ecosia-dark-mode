@@ -1,6 +1,6 @@
 {
   "name": "ecosia-dark-mode",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Dark-mode extension of the ecosia official chrome extension",
   "main": "index.js",
   "scripts": {

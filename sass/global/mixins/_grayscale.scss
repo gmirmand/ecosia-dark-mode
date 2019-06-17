@@ -7,3 +7,7 @@
   color: $color-light;
   z-index: -1;
 }
+
+@mixin whitify() {
+  filter: brightness(0) invert(1);
+}

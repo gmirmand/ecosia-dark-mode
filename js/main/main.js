@@ -32,7 +32,7 @@ GlobalEDK = {
         });
     },
     EDK_image: function () {
-        $('.logos-container a').append(
+        $('.search-section .content a').append(
             '<img src="https://i.ibb.co/hdLbcZC/logo-ecosia-dark-full.png" alt="Ecosia" border="0">'
         );
 

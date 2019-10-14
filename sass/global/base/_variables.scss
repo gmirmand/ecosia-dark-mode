@@ -2,6 +2,7 @@
 $color-dark : #131A2F;
 $color-very-dark : darken($color-dark, 5%);
 $color-light-dark : lighten($color-dark, 5%);
+$color-very-light-dark : lighten($color-dark, 10%);
 $color-light: lighten($color-dark, 75%);
 $color-dark-light: #666;
 $color-primary: #16877F;

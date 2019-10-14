@@ -112,8 +112,27 @@ body:not(.EDK__body) {
     }
   }
 
-  .custom-select-trigger, .c-additional-nav .c-ecosia-search, .c-language-select, .c-archive {
+  .custom-select-trigger, .c-additional-nav .c-ecosia-search, .c-language-select, .c-archive, .dropdown-menu-group {
     border-color: $color-very-dark;
+  }
+
+  .dropdown.is-open .entity-header-more, .dropdown.is-open .pill, .navbar-item-filters .is-open .entity-header-more, .navbar-item-filters .is-open .pill {
+    background-color: $color-light-dark;
+  }
+
+  .media,
+  .statistics-what,
+  .statistics,
+  .reports {
+    background-color: $color-light-dark;
+  }
+
+  .h2,
+  .statistics-value-highlight,
+  .how-text,
+  .h2.press-h2,
+  .text-intro {
+    color: #fff;
   }
 
   .is-open .custom-select-options, .c-nav--collapsed {
@@ -263,9 +282,9 @@ body:not(.EDK__body) {
     }
   }
 
-  .search-form-wrapper, .pill-inversed, .disclaimer, .section-title-pill {
+  .search-form-wrapper, .pill-inversed, .disclaimer, .section-title-pill, .search-form-field, .newsletter-form .newsletter-input {
     &, & input {
-      background-color: transparent;
+      background-color: $color-light-dark;
       border-color: $color-light-dark;
       border-radius: 10px;
       color: $color-light;
@@ -331,7 +350,7 @@ body:not(.EDK__body) {
     background-color: $color-very-dark;
   }
 
-  .panel, .link-more, .more, .main-popup, .followup-popup .tag, .c-tags a, .box, .box-gray, .box-light, .callout, .widget, .typeahead, .thumbnail-video, .thumbnail-news, .thumbnail-item, .suggestion-list, .pill, .pill:focus, .pill:active, .pill.active, .pagination-button, .icons-dropdown-list, .flags-dropdown-arrow, .flags-dropdown-header, .flags-dropdown-body, .flags-dropdown-chosen, .flags-dropdown-more, .filter-trigger, .filter-list {
+  .dropdown-item, .panel, .link-more, .more, .main-popup, .followup-popup .tag, .c-tags a, .box, .box-gray, .box-light, .callout, .widget, .typeahead, .thumbnail-video, .thumbnail-news, .thumbnail-item, .suggestion-list, .pill, .pill:focus, .pill:active, .pill.active, .pagination-button, .icons-dropdown-list, .flags-dropdown-arrow, .flags-dropdown-header, .flags-dropdown-body, .flags-dropdown-chosen, .flags-dropdown-more, .filter-trigger, .filter-list {
     background-color: $color-very-dark;
     border-color: $color-dark;
     box-shadow: 0 1px 4px 0 $color-very-dark;
@@ -341,6 +360,10 @@ body:not(.EDK__body) {
     &:hover {
       background-color: $color-very-dark;
       border-color: $color-dark;
+
+      a {
+        color: #fff;
+      }
     }
 
     li {
@@ -395,7 +418,7 @@ body:not(.EDK__body) {
     }
   }
 
-  .entity, .sidebar-product-ad, .site-footer, hr, .c-widget, .c-post-hero__content, .c-footer {
+  .entity, .sidebar-product-ad, .site-footer, hr, .c-widget, .c-post-hero__content, .c-footer, .dropdown-menu, .offcanvas-menu, .offcanvas-menu-header {
     background-color: $color-very-dark;
     border-color: $color-dark;
     box-shadow: 0 1px 4px 0 $color-very-dark;
@@ -445,7 +468,7 @@ body:not(.EDK__body) {
     border-color: $color-light-dark;
 
     &, & input {
-      background-color: transparent;
+      background-color: $color-light-dark;
       color: $color-light;
 
       &::placeholder {

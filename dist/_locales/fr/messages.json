@@ -1,0 +1,27 @@
+{
+  "popup": {
+    "message": "Ecosia dark-mode",
+    "title": "Ecosia dark-mode Popup"
+  },
+  "alert_keep_offi": {
+    "message": "Veuillez garder <b>l'extension chrome officielle d'Ecosia</b> installée pour conserver toutes ses fonctionnalités"
+  },
+  "search_explain": {
+    "message": "Les recherches Ecosia peuvent parfois être moins pertinentes que celles de Google. Pour des recherches plus précises, vous pouvez utiliser ce champ. (Mais vous ne planterez pas un arbre ...:( )"
+  },
+  "alert_thanks": {
+    "message": "Hey ! Merci d'avoir installé l'extension Ecosia Dark-Mode ! <b>:D</b>"
+  },
+  "new_tab_title": {
+    "message": "Nouvel onglet - Ecosia dark-mode"
+  },
+  "searchinput_placeholder": {
+    "message": "Lance une recherche pour planter des arbres..."
+  },
+  "new_tab_infos": {
+    "message": "<b>Veuillez garder <b><a href=\"https://chrome.google.com/webstore/detail/ecosia-the-search-engine/eedlgdlajadkbbjoobobefphmfkcchfk\" target=\"_blank\">l'extension chrome officielle d'Ecosia</a></b> installée pour conserver toutes ses fonctionnalités !</b><br>Cette page nouvel onglet est un \"copie\" de la page nouvel onglet de <a href=\"https://chrome.google.com/webstore/detail/ecosia-the-search-engine/eedlgdlajadkbbjoobobefphmfkcchfk\" target=\"_blank\">l'extension ecosia officiel</a>. Aucun revenu n'est généré à partir de cette extension et tous les droits restent réservés aux créateurs d'ecosia."
+  },
+  "new_tab_author": {
+    "message": "Extension Ecosia Dark-Mode développé par "
+  }
+}

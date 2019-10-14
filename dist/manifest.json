@@ -3,6 +3,7 @@
   "version": "1.2.3",
   "description": "A Dark-mode extension for ecosia",
   "manifest_version": 2,
+  "default_locale": "en",
   "browser_action": {
     "default_icon": {
       "16": "images/logo-ecosia-dark-16.png",

@@ -1,0 +1,27 @@
+{
+  "popup": {
+    "message": "Ecosia dark-mode",
+    "title": "Ecosia dark-mode Popup"
+  },
+  "alert_keep_offi": {
+    "message": "Please keep the <b>official Ecosia chrome extension</b> installed to keep all features !"
+  },
+  "search_explain": {
+    "message": "Ecosia searches can sometimes be less precise than those of google. For more specific searches you can use this google search box. (But you will not plant a tree ... it's a shame)"
+  },
+  "alert_thanks": {
+    "message": "Hey there ! Thanks you for installing our ecosia dark-mode extension ! <b>:D</b>"
+  },
+  "new_tab_title": {
+    "message": "New tab - Ecosia dark-mode"
+  },
+  "searchinput_placeholder": {
+    "message": "Start a search to plant trees ..."
+  },
+  "new_tab_infos": {
+    "message": "<b>Please keep the <b><a href=\"https://chrome.google.com/webstore/detail/ecosia-the-search-engine/eedlgdlajadkbbjoobobefphmfkcchfk\" target=\"_blank\">official Ecosia chrome extension</a></b> installed to keep all features !</b><br>This extension is a \"copy\" of the <a href=\"https://chrome.google.com/webstore/detail/ecosia-the-search-engine/eedlgdlajadkbbjoobobefphmfkcchfk\" target=\"_blank\">ecosia extension</a>. No income is generated from this extension and all rights are reserved to ecosia creators."
+  },
+  "new_tab_author": {
+    "message": "Ecosia Dark-Mode extension propose by "
+  }
+}

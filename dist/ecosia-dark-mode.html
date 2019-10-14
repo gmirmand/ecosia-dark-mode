@@ -8,21 +8,13 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="vendors.js"></script>
     <script src="popup.js"></script>
-    <title>Ecosia dark-mode Popup</title>
+    <title data-i18n="title"></title>
 </head>
 <body class="popup__body">
 <div class="popup__container">
     <div class="warning__container d-none">
         <div class="alert alert-warning" id="alert-1" role="alert">
-            Please keep the official <b>Ecosia chrome extension</b> installed to keep all features !
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    </div>
-    <div class="warning__container d-none">
-        <div class="alert alert-info" id="alert-2" role="alert">
-            A translated version of the extension should arrive soon !
+            <span data-i18n="alert_keep_offi"></span>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -39,31 +31,19 @@
     <div class="search__container">
         <form action="https://www.google.com/search" method="get" id="google-search">
             <label>
-                <input type="text" name="q" class="search__input" autocomplete="off" />
+                <input type="text" name="q" class="search__input" autocomplete="off"/>
                 <input type="submit" value="Recherche Google" class="search__submit"/>
             </label>
         </form>
         <div class="search__explication">
-            <span>Ecosia searches can sometimes be less precise than those of google. For more specific searches you can use this google search box. (But you will not plant a tree ... it's a shame)</span>
+            <span data-i18n="search_explain"></span>
         </div>
     </div>
 </div>
 <div class="popup__disabled d-none">
     <div class="warning__container">
-        <div class="alert alert-success" role="alert">
-            Hey there ! Thanks you for installing our ecosia dark-mode extension ! <b>:D</b>
-        </div>
-        <div class="alert alert-warning" role="alert">
-            Please keep the official <b>Ecosia chrome extension</b> installed to keep all features !
-        </div>
-        <div class="alert alert-info" role="alert">
-            A translated version of the extension should arrive soon !
-        </div>
-<!--        <div class="alert alert-info" role="alert">-->
-<!--            [...] If you do not use the "new tab" page's features, <b>we recommend you to redirect the new tabs page</b>-->
-<!--            to <span class="badge badge-light">www.ecosia.org</span> with the <span class="badge badge-light">"New Tab Redirect"</span>-->
-<!--            chrome extension for example.-->
-<!--        </div>-->
+        <div class="alert alert-success" data-i18n="alert_thanks" role="alert"></div>
+        <div class="alert alert-warning" data-i18n="alert_keep_offi" role="alert"></div>
     </div>
 </div>
 </body>

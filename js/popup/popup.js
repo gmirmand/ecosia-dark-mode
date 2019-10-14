@@ -6,10 +6,12 @@ main.General = function () {
 
 main.General.prototype = {
     init: function () {
-        PopupEDK.init();
+        PopupEDK.switch();
+        PopupEDK.onPopupOpen();
         PopupEDK.googleSearch();
         PopupEDK.closeAlert();
         PopupEDK.showNoDomainAlert();
+        PopupEDK.translations();
     }
 };
 
@@ -21,11 +23,6 @@ $(document).ready(function () {
 //Start
 var PopupEDK;
 PopupEDK = {
-    //Init
-    init: function () {
-        PopupEDK.switch();
-        PopupEDK.onPopupOpen();
-    },
     switch: function () {
         var button = $('.switch-onoff__slide');
         button.on('click', function (e) {
@@ -153,5 +150,26 @@ PopupEDK = {
                 $('.popup__disabled, .popup__container').toggleClass('d-none');
             }
         );
+    },
+    translations: function() {
+        var translate_elmts = $("[data-i18n]");
+        for (var i = 0; i < translate_elmts.length; ++i) {
+            var item = translate_elmts[i];
+
+            var key = item.getAttribute('data-i18n');
+            var target = item.getAttribute('data-i18n-target');
+
+            console.log(target);
+            switch(target) {
+                case 'placeholder':
+                    item.attr('placeholder', key);
+                    break;
+                default:
+                    item.innerHTML = PopupEDK.getTranslation(key);
+            }
+        }
+    },
+    getTranslation: function(key, params) {
+        return chrome.i18n.getMessage(key);
     }
 };

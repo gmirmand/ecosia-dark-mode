@@ -237,7 +237,7 @@ body:not(.EDK__body) {
     }
   }
 
-  .entity-disambiguation-item, .sidebar-product-ad-item, .entity-footer, .notification, .group {
+  .entity-disambiguation-item, .personal-counter-content-actions, .footer, .sidebar-product-ad-item, .entity-footer, .notification, .group {
     border-color: $color-light-dark;
   }
 
@@ -282,13 +282,18 @@ body:not(.EDK__body) {
     }
   }
 
-  .search-form-wrapper, .pill-inversed, .disclaimer, .section-title-pill, .search-form-field, .newsletter-form .newsletter-input {
+  .search-form-wrapper, .pill-inversed, .section-title-pill, .search-form-field, .newsletter-form .newsletter-input {
     &, & input {
       background-color: $color-light-dark;
       border-color: $color-light-dark;
       border-radius: 10px;
       color: $color-light;
     }
+  }
+
+  .disclaimer {
+    background-color: transparent;
+    border-color: transparent;
   }
 
   .section-title-pill {
@@ -490,10 +495,13 @@ body:not(.EDK__body) {
   }
 
   .cta-wrapper a, .c-btn {
-    background-color: $color-light;
+    background-color: $color-light-dark;
+    border-color: $color-light-dark;
+    transition: all 0.33s ease;
 
     &:hover {
-      background-color: darken($color-light, 10%);
+      background-color: darken($color-light-dark, 10%);
+      border-color: darken($color-light-dark, 10%);
     }
   }
 

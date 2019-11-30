@@ -82,7 +82,7 @@ body:not(.EDK__body) {
     }
   }
 
-  .js-notifications-banner .notifications-banner, .card-mobile, .navbar-container, .c-post-card {
+  .popover, .card-productads, .js-notifications-banner .notifications-banner, .card-mobile, .navbar-container, .c-post-card {
     background-color: $color-dark;
 
     &::after {
@@ -112,7 +112,7 @@ body:not(.EDK__body) {
     }
   }
 
-  .custom-select-trigger, .c-additional-nav .c-ecosia-search, .c-language-select, .c-archive, .dropdown-menu-group {
+  .popover-learnmore-footer, .custom-select-trigger, .c-additional-nav .c-ecosia-search, .c-language-select, .c-archive, .dropdown-menu-group {
     border-color: $color-very-dark;
   }
 

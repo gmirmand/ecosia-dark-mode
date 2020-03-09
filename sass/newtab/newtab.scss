@@ -20,7 +20,7 @@ body {
 .search-form {
   border-color: $color-light-dark;
   &, & input {
-    background-color: $color-light-dark;
+    //background-color: $color-light-dark;
     color: $color-light;
     &::placeholder {
       color: darken($color-light, 10%);

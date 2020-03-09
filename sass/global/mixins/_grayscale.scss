@@ -1,5 +1,5 @@
-@mixin grayscale() {
-  filter: grayscale(50%) saturate(0) opacity(0.2) brightness(50%) contrast(200%);
+@mixin grayscale($opacity: 0.2) {
+  filter: grayscale(50%) saturate(0) opacity($opacity) brightness(50%) contrast(200%);
 }
 
 @mixin invert() {

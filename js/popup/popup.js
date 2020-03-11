@@ -60,7 +60,8 @@ PopupEDK = {
                 button.addClass('open');
             }
 
-            PopupEDK.tracker.sendEvent('Popup', 'Switch', "L'utilisateur a fait un switch", result.dk === 'disabled' ? 'dark enabled' : 'dark disabled');
+            var status = result.dk === 'disabled' ? 'dark enabled' : 'dark disabled';
+            PopupEDK.tracker.sendEvent('Popup', 'Switch', "L'utilisateur a fait un switch | Status : " + status);
         });
     },
     onPopupOpen: function () {
@@ -80,14 +81,14 @@ PopupEDK = {
     },
     googleSearch: function () {
         $('#google-search').on('submit', function () {
+            PopupEDK.tracker.sendEvent('Popup', 'Search', "L'utilisateur a fait une recherche google");
+
             var action = $(this).attr('action');
             $input = $(this).find('.search__input');
             var name = $input.attr('name');
             var value = $input.val();
             var url = action + '?' + name + '=' + value;
             chrome.storage.sync.set({url: url});
-
-            PopupEDK.tracker.sendEvent('Popup', 'Search', "L'utilisateur a fait une recherche google");
 
             chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
                 chrome.tabs.sendRequest(tabs[0].id, {action: "redirect"}, function (resp) {
@@ -201,5 +202,7 @@ PopupEDK = {
         PopupEDK.tracker = PopupEDK.service.getTracker('UA-160182955-1');  // GA Tracking ID.
 
         PopupEDK.tracker.sendAppView('MainView');
+
+        PopupEDK.tracker.sendEvent('Popup', 'Open', "L'utilisateur a ouvert la popup");
     }
 };

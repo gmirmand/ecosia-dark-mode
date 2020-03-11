@@ -25,7 +25,7 @@
     "message": "Extension Ecosia Dark-Mode développé par "
   },
   "alert_rgpd": {
-    "message": "En cliquant sur \"Accepter\", vous acceptez de nous permettre de récupérer des informations primaires sur l'utilisation de cette extension afin d'adapter celle-ci à vos exigences. Ces données restent confidentielles et ne seront en aucun cas revendus ou transmise à un autre service."
+    "message": "En cliquant sur \"Accepter\", vous acceptez de nous permettre de récupérer des informations primaires sur l'utilisation de cette extension afin d'adapter celle-ci à vos exigences. Ces données restent confidentielles et ne seront en aucun cas revendues ou transmises à un autre service."
   },
   "alert_rgpd_agree": {
     "message": "Accepter"

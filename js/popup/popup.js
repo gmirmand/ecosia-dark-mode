@@ -198,7 +198,7 @@ PopupEDK = {
               });
           });
 
-        PopupEDK.tracker = PopupEDK.service.getTracker('G-TE4M5LGK1Y');  // Supply your GA Tracking ID.
+        PopupEDK.tracker = PopupEDK.service.getTracker('G-TE4M5LGK1Y');  // GA Tracking ID.
 
         PopupEDK.tracker.sendAppView('MainView');
     }

@@ -12,8 +12,19 @@
 </head>
 <body class="popup__body">
 <div class="popup__container">
+    <div class="warning__container">
+        <div class="alert alert-info" data-alert-id="alert-2" role="alert">
+            <p data-i18n="alert_rgpd"></p>
+            <button type="button" data-dismiss="alert" data-agree="true" aria-label="Close" class="btn btn-success">
+                <span aria-hidden="true" data-i18n="alert_rgpd_agree"></span>
+            </button>
+            <button type="button" data-dismiss="alert" data-agree="false" aria-label="Close" class="btn btn-link">
+                <span aria-hidden="true" data-i18n="alert_rgpd_decline"></span>
+            </button>
+        </div>
+    </div>
     <div class="warning__container d-none">
-        <div class="alert alert-warning" id="alert-1" role="alert">
+        <div class="alert alert-warning" data-alert-id="alert-1" role="alert">
             <span data-i18n="alert_keep_offi"></span>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -42,6 +53,17 @@
 </div>
 <div class="popup__disabled d-none">
     <div class="warning__container">
+        <div class="warning__container">
+            <div class="alert alert-info" data-alert-id="alert-2" role="alert">
+                <p data-i18n="alert_rgpd"></p>
+                <button type="button" data-dismiss="alert" data-agree="true" aria-label="Close" class="btn btn-success">
+                    <span aria-hidden="true" data-i18n="alert_rgpd_agree"></span>
+                </button>
+                <button type="button" data-dismiss="alert" data-agree="false" aria-label="Close" class="btn btn-link">
+                    <span aria-hidden="true" data-i18n="alert_rgpd_decline"></span>
+                </button>
+            </div>
+        </div>
         <div class="alert alert-success" data-i18n="alert_thanks" role="alert"></div>
         <div class="alert alert-warning" data-i18n="alert_keep_offi" role="alert"></div>
     </div>

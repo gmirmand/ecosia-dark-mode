@@ -12,6 +12,7 @@ main.General.prototype = {
         PopupEDK.closeAlert();
         PopupEDK.showNoDomainAlert();
         PopupEDK.translations();
+        PopupEDK.analytics();
     }
 };
 
@@ -23,6 +24,9 @@ $(document).ready(function () {
 //Start
 var PopupEDK;
 PopupEDK = {
+    service: undefined,
+    tracker: undefined,
+    tmpConsent: undefined,
     switch: function () {
         var button = $('.switch-onoff__slide');
         button.on('click', function (e) {
@@ -40,9 +44,9 @@ PopupEDK = {
             });
         });
     },
-    logStorage: function () {
-        chrome.storage.sync.get(['dk'], function (result) {
-            console.log(result.dk);
+    logStorage: function (key) {
+        chrome.storage.sync.get([key], function (result) {
+            console.log(result[key]);
         });
     },
     switchBtn: function () {
@@ -55,8 +59,9 @@ PopupEDK = {
                 chrome.storage.sync.set({dk: 'disabled'});
                 button.addClass('open');
             }
+
+            PopupEDK.tracker.sendEvent('Popup', 'Switch', "L'utilisateur a fait un switch", result.dk === 'disabled' ? 'dark enabled' : 'dark disabled');
         });
-        PopupEDK.logStorage();
     },
     onPopupOpen: function () {
         var button = $('.switch-onoff__slide');
@@ -82,6 +87,8 @@ PopupEDK = {
             var url = action + '?' + name + '=' + value;
             chrome.storage.sync.set({url: url});
 
+            PopupEDK.tracker.sendEvent('Popup', 'Search', "L'utilisateur a fait une recherche google");
+
             chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
                 chrome.tabs.sendRequest(tabs[0].id, {action: "redirect"}, function (resp) {
                     if (resp) {
@@ -104,7 +111,7 @@ PopupEDK = {
                     chromeStorageAlerts = result.alerts;
                 if (chromeStorageAlerts !== undefined) {
                     $.each(chromeStorageAlerts, function (i, value) {
-                        $('#' + value).addClass('d-none');
+                        $('div[data-alert-id='+value+']').addClass('d-none');
                     });
                 }
             });
@@ -116,10 +123,19 @@ PopupEDK = {
             }
         }, 250);
 
+        $('.alert button').on('click', function() {
+            PopupEDK.tmpConsent = $(this).data('agree');
+        });
+
         $allAlerts.on('closed.bs.alert', function () {
             if (chrome.storage !== undefined) {
-                chromeStorageAlerts.push(this.id);
+                chromeStorageAlerts.push($(this).data("alert-id"));
                 chrome.storage.sync.set({alerts: chromeStorageAlerts});
+
+                if(PopupEDK.tmpConsent) {
+                    chrome.storage.sync.set({rgpd_consent: PopupEDK.tmpConsent});
+                    PopupEDK.tmpConsent = undefined;
+                }
             }
         });
     },
@@ -159,7 +175,6 @@ PopupEDK = {
             var key = item.getAttribute('data-i18n');
             var target = item.getAttribute('data-i18n-target');
 
-            console.log(target);
             switch(target) {
                 case 'placeholder':
                     item.attr('placeholder', key);
@@ -171,5 +186,20 @@ PopupEDK = {
     },
     getTranslation: function(key, params) {
         return chrome.i18n.getMessage(key);
+    },
+    analytics: function() {
+        PopupEDK.service = analytics.getService('ecosia_extension');
+
+        PopupEDK.service.getConfig().addCallback(
+          function(config) {
+              chrome.storage.sync.get(['rgpd_consent'], function (result) {
+                  var permitted = result.rgpd_consent;
+                  config.setTrackingPermitted(permitted === true);
+              });
+          });
+
+        PopupEDK.tracker = PopupEDK.service.getTracker('G-TE4M5LGK1Y');  // Supply your GA Tracking ID.
+
+        PopupEDK.tracker.sendAppView('MainView');
     }
 };

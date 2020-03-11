@@ -41,6 +41,7 @@
   },
   "permissions": [
     "storage",
-    "topSites"
+    "topSites",
+    "https://www.google-analytics.com/"
   ]
 }

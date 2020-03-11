@@ -23,5 +23,14 @@
   },
   "new_tab_author": {
     "message": "Ecosia Dark-Mode extension propose by "
+  },
+  "alert_rgpd": {
+    "message": "By clicking \"Agree\", you agree to allow us to retrieve primary information about the use of this extension in order to tailor it to your requirements. This data remains confidential and will not be resold or transmitted to any other service."
+  },
+  "alert_rgpd_agree": {
+    "message": "Agree"
+  },
+  "alert_rgpd_decline": {
+    "message": "Decline"
   }
 }

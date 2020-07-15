@@ -32,9 +32,9 @@ GlobalEDK = {
         });
     },
     EDK_image: function () {
-        $('.search-section .content a').append(
-            '<img src="https://i.ibb.co/hdLbcZC/logo-ecosia-dark-full.png" alt="Ecosia" border="0">'
-        );
+        // $('.search-section .content a').append(
+        //     '<img src="https://i.ibb.co/hdLbcZC/logo-ecosia-dark-full.png" alt="Ecosia" border="0">'
+        // );
 
         //this permit to add a filter to svg image that are place in background without applying the filter on the child content
         $('.info-section').each(function () {

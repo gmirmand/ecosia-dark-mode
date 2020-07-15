@@ -17,6 +17,10 @@ body {
 }
 
 body:not(.EDK__body) {
+  :focus {
+    outline-color: $color-light;
+    box-shadow: none;
+  }
 
   // Main
   &, & .navbar-row, & .results-wrapper, &.body-serp {
@@ -77,8 +81,14 @@ body:not(.EDK__body) {
     background-color: $color-very-dark;
   }
 
+  .personal-counter-content__actions,
   .search-header > .search-header-menu-group .pill, .search-header > .search-header-menu-group .pill.is-open, .search-header > .search-header-menu-group .pill.is-open:hover, .search-header > .search-header-menu-group .pill:focus {
     border-color: $color-dark;
+  }
+
+  .layout,
+  .main-header__content {
+    background-color: transparent !important;
   }
 
   .color-primary {
@@ -97,6 +107,8 @@ body:not(.EDK__body) {
     border-color: $color-light-dark;
   }
 
+  .results-info,
+  .main-header--border .main-header__content,
   .after-results-info {
     border-color: $color-very-dark;
   }
@@ -117,7 +129,7 @@ body:not(.EDK__body) {
   }
 
   // Global bgc
-  .followup-popup, .link, .c-nav--collapsed, .c-nav, .c-archive, .filter-select {
+  .followup-popup, .c-nav--collapsed, .c-nav, .c-archive, .filter-select {
     background-color: $color-very-dark;
 
     &.link:hover {
@@ -174,7 +186,8 @@ body:not(.EDK__body) {
   .statistics-value-highlight,
   .how-text,
   .h2.press-h2,
-  .text-intro {
+  .text-intro,
+  .heading {
     color: #fff;
   }
 
@@ -208,10 +221,12 @@ body:not(.EDK__body) {
     border-color: $color-very-dark;
   }
 
+  .popover,
   .result-snippet, .sidebar-text, .result-metadata, .thumbnail-video-duration, .entity-disambiguation-text, .sidebar-product-ad-text {
     color: $color-dark-light;
   }
 
+  .result-title__link,
   .result-url, .result-url:active, .result-url:hover, .result-url:visited, .thumbnail-publisher {
     color: $color-primary;
   }
@@ -255,7 +270,11 @@ body:not(.EDK__body) {
       }
 
       svg {
-        display: none;
+        //display: none;
+      }
+
+      .type-st0 {
+        fill: #fff;
       }
     }
   }
@@ -325,7 +344,7 @@ body:not(.EDK__body) {
     }
   }
 
-  .search-form-wrapper, .pill-inversed, .section-title-pill, .newsletter-form .newsletter-input {
+  .search-form-wrapper, .pill-inversed, .section-title-pill, .newsletter-form .newsletter-input, .input-wrapper {
     &, & input {
       background-color: $color-light-dark;
       border-color: $color-light-dark;
@@ -334,11 +353,17 @@ body:not(.EDK__body) {
     }
   }
 
+  .main-header__search {
+    background-color: $color-very-light-dark;
+    border-radius: 10px;
+  }
+
   .disclaimer {
     background-color: transparent;
     border-color: transparent;
   }
 
+  .tab .dropdown,
   .section-title-pill {
     background-color: $color-very-dark;
   }
@@ -398,7 +423,37 @@ body:not(.EDK__body) {
     background-color: $color-very-dark;
   }
 
-  .dropdown-item, .panel, .link-more, .more, .main-popup, .followup-popup .tag, .c-tags a, .box, .box-gray, .box-light, .callout, .widget, .typeahead, .thumbnail-video, .thumbnail-news, .thumbnail-item, .suggestion-list, .pill, .pill:focus, .pill:active, .pill.active, .icons-dropdown-list, .flags-dropdown-arrow, .flags-dropdown-header, .flags-dropdown-body, .flags-dropdown-chosen, .flags-dropdown-more, .filter-trigger, .filter-list {
+  .icon-button {
+    &--variant-outline-dark {
+      border: none;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: $color-light-dark;
+      }
+    }
+  }
+
+  .notification-pill:focus path,
+  .notification-pill:hover path,
+  .icon-button:focus .icon-button__icon-hamburger path,
+  .icon-button:hover .icon-button__icon-hamburger path {
+    &, &:focus, &:active, &:hover {
+      fill: #fff;
+    }
+  }
+
+  .list-item:active, .list-item:focus, .list-item:hover {
+    background-color: $color-light-dark;
+  }
+
+  .popover-footer,
+  .main-nav-menu__group[data-v-4dfbbcaa] {
+    border-color: $color-light-dark;
+  }
+
+  .dropdown-item, .panel, .more, .main-popup, .followup-popup .tag, .c-tags a, .box, .box-gray, .box-light, .callout, .widget, .typeahead, .thumbnail-video, .thumbnail-news, .thumbnail-item, .suggestion-list, .pill, .pill:focus, .pill:active, .pill.active, .icons-dropdown-list, .flags-dropdown-arrow, .flags-dropdown-header, .flags-dropdown-body, .flags-dropdown-chosen, .flags-dropdown-more, .filter-trigger, .filter-list {
     background-color: $color-very-dark;
     border-color: $color-dark;
     box-shadow: 0 1px 4px 0 $color-very-dark;
@@ -466,7 +521,7 @@ body:not(.EDK__body) {
     }
   }
 
-  .entity, .sidebar-product-ad, .site-footer, hr, .c-widget, .c-post-hero__content, .c-footer, .dropdown-menu, .offcanvas-menu, .offcanvas-menu-header {
+  .entity, .sidebar-product-ad, .site-footer, hr, .c-widget, .c-post-hero__content, .c-footer, .dropdown-menu, .offcanvas-menu, .offcanvas-menu-header, .main-footer {
     background-color: $color-very-dark;
     border-color: $color-dark;
     // box-shadow: 0 1px 4px 0 $color-very-dark;
@@ -519,8 +574,10 @@ body:not(.EDK__body) {
   }
 
   .search-form {
-    border-color: $color-light-dark;
+    //border-color: $color-light-dark;
     color: $color-light;
+    background-color: transparent;
+    border: none;
 
     & input {
       color: $color-light;
@@ -535,6 +592,7 @@ body:not(.EDK__body) {
     @include invert();
   }
 
+  .link, .link:visited,
   a, .thumbnail-title, .entity-description-more, .entity-description-more:hover, .entity-disambiguation-title, .entity-disambiguation-title:hover, .sidebar-product-ad-title, .sidebar-product-ad-title:hover {
     color: $color-primary;
 
@@ -587,4 +645,5 @@ body:not(.EDK__body) {
   .settings-headline, .form-with-labels {
     color: $color-primary;
   }
+
 }

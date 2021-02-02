@@ -43,15 +43,24 @@ PopupEDK = {
             console.log(result[key]);
         });
     },
+    addBodyClass: function (isDark) {
+        if (isDark === true) {
+            $('body').removeClass('EDK__body');
+        } else if (isDark === false) {
+            $('body').addClass('EDK__body');
+        }
+    },
     switchBtn: function () {
         var button = $('.switch-onoff__slide');
         chrome.storage.sync.get(['dk'], function (result) {
             if (result.dk === 'disabled') {
                 chrome.storage.sync.set({dk: 'enabled'});
                 button.removeClass('open');
+                PopupEDK.addBodyClass(true);
             } else {
                 chrome.storage.sync.set({dk: 'disabled'});
                 button.addClass('open');
+                PopupEDK.addBodyClass(false);
             }
 
             var status = result.dk === 'disabled' ? 'dark enabled' : 'dark disabled';
@@ -64,11 +73,14 @@ PopupEDK = {
             chrome.storage.sync.get(['dk'], function (result) {
                 if (result.dk === 'disabled') {
                     button.addClass('open');
+                    PopupEDK.addBodyClass(false);
                 } else if (result.dk === 'undefined') {
                     chrome.storage.sync.set({dk: 'disabled'});
                     button.removeClass('open');
+                    PopupEDK.addBodyClass(true);
                 } else {
                     button.removeClass('open');
+                    PopupEDK.addBodyClass(true);
                 }
             });
         }
@@ -106,7 +118,7 @@ PopupEDK = {
                     chromeStorageAlerts = result.alerts;
                 if (chromeStorageAlerts !== undefined) {
                     $.each(chromeStorageAlerts, function (i, value) {
-                        $('div[data-alert-id='+value+']').addClass('d-none');
+                        $('div[data-alert-id=' + value + ']').addClass('d-none');
                     });
                 }
             });
@@ -118,7 +130,7 @@ PopupEDK = {
             }
         }, 250);
 
-        $('.alert button').on('click', function() {
+        $('.alert button').on('click', function () {
             PopupEDK.tmpConsent = $(this).data('agree');
         });
 
@@ -127,7 +139,7 @@ PopupEDK = {
                 chromeStorageAlerts.push($(this).data("alert-id"));
                 chrome.storage.sync.set({alerts: chromeStorageAlerts});
 
-                if(PopupEDK.tmpConsent) {
+                if (PopupEDK.tmpConsent) {
                     chrome.storage.sync.set({rgpd_consent: PopupEDK.tmpConsent});
                     PopupEDK.tmpConsent = undefined;
                 }
@@ -161,7 +173,7 @@ PopupEDK = {
             }
         );
     },
-    translations: function() {
+    translations: function () {
         var translate_elmts = $("[data-i18n]");
         for (var i = 0; i < translate_elmts.length; ++i) {
             var item = translate_elmts[i];
@@ -169,7 +181,7 @@ PopupEDK = {
             var key = item.getAttribute('data-i18n');
             var target = item.getAttribute('data-i18n-target');
 
-            switch(target) {
+            switch (target) {
                 case 'placeholder':
                     item.attr('placeholder', key);
                     break;
@@ -178,19 +190,19 @@ PopupEDK = {
             }
         }
     },
-    getTranslation: function(key, params) {
+    getTranslation: function (key, params) {
         return chrome.i18n.getMessage(key);
     },
-    analytics: function() {
+    analytics: function () {
         PopupEDK.service = analytics.getService('ecosia_extension');
 
         PopupEDK.service.getConfig().addCallback(
-          function(config) {
-              chrome.storage.sync.get(['rgpd_consent'], function (result) {
-                  var permitted = result.rgpd_consent;
-                  config.setTrackingPermitted(permitted === true);
-              });
-          });
+            function (config) {
+                chrome.storage.sync.get(['rgpd_consent'], function (result) {
+                    var permitted = result.rgpd_consent;
+                    config.setTrackingPermitted(permitted === true);
+                });
+            });
 
         PopupEDK.tracker = PopupEDK.service.getTracker('UA-160182955-1');  // GA Tracking ID.
 

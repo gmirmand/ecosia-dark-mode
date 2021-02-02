@@ -7,3 +7,13 @@ $color-light: lighten($color-dark, 75%);
 $color-dark-light: #666;
 $color-primary: #16877F;
 $color-secondary: #91A5C6;
+
+$color-dark--inverted : #fff;
+$color-very-dark--inverted : darken($color-dark--inverted, 5%);
+$color-light-dark--inverted : lighten($color-dark--inverted, 5%);
+$color-very-light-dark--inverted : lighten($color-dark--inverted, 10%);
+$color-light--inverted: lighten($color-dark--inverted, 75%);
+$color-dark-light--inverted: #666;
+$color-primary--inverted: $color-primary;
+$color-secondary--inverted: #969696;
+

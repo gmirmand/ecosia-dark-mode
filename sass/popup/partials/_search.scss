@@ -1,15 +1,44 @@
+body:not(.EDK__body) {
+  .search {
+    &__input {
+      background: $color-very-dark;
+      border: 1px solid $color-very-dark;
+      color: $color-light;
+    }
+
+    &__submit {
+      background-color: $color-very-dark;
+      border: 1px solid $color-very-dark;
+      color: #5F6368;
+
+      &:hover {
+        background-color: lighten($color-very-dark, 1%);
+        background-image: linear-gradient(top, lighten($color-very-dark, 1%), lighten($color-very-dark, 2%));
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        color: rgba($color-light, 0.7);
+      }
+    }
+
+    &__explication {
+      color: rgba($color-light, 0.2);
+    }
+  }
+}
+
 .search {
   &__container {
     margin-top: 20px;
+
     form {
       margin: 0;
       padding: 0;
     }
   }
+
   &__input {
-    background: $color-very-dark;
+    background: $color-very-dark--inverted;
     display: flex;
-    border: 1px solid $color-very-dark;
+    border: 1px solid $color-very-dark--inverted;
     border-radius: 24px;
     z-index: 3;
     height: 44px;
@@ -18,19 +47,18 @@
     max-width: 482px;
     outline: none;
     flex: 1;
-    padding: 5px 8px 5px 16px;
-    padding-left: 20px;
-    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
-    border-color: rgba(223,225,229,0);
-    color: $color-light;
+    padding: 5px 8px 5px 20px;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    color: $color-light--inverted;
   }
+
   &__submit {
-    background-color: $color-very-dark;
-    border: 1px solid $color-very-dark;
+    background-color: $color-very-dark--inverted;
+    border: 1px solid $color-very-dark--inverted;
     border-radius: 4px;
     color: #5F6368;
     cursor: pointer;
-    font-family: arial,sans-serif;
+    font-family: arial, sans-serif;
     font-size: 14px;
     margin: 11px 4px;
     min-width: 54px;
@@ -40,17 +68,17 @@
     line-height: 27px;
 
     &:hover {
-      background-color: lighten($color-very-dark, 1%);
-      background-image: linear-gradient(top,lighten($color-very-dark, 1%),lighten($color-very-dark, 2%));
+      background-color: lighten($color-very-dark--inverted, 1%);
+      background-image: linear-gradient(top, lighten($color-very-dark--inverted, 1%), lighten($color-very-dark--inverted, 2%));
       border: 1px solid transparent;
-      box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-      color: rgba($color-light, 0.7);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+      color: rgba($color-light--inverted, 0.7);
     }
   }
 
   &__explication {
     font-size: 0.8rem;
-    color: rgba($color-light, 0.2);
+    color: $color-dark-light--inverted;
     position: relative;
     display: flex;
   }

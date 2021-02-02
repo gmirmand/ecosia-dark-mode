@@ -1,13 +1,17 @@
 // Global sass
 @import "../global/**/*.scss";
+@import "./partials/**/*.scss";
 
 //ELEMENTS
 .popup {
   &__body {
     padding: 3em 1.5em;
     text-align: center;
-    @import "./partials/**/*.scss";
     min-width: 450px;
-    background-color: $color-light-dark;
+    transition: .33s;
   }
+}
+
+body:not(.EDK__body) {
+  background-color: $color-light-dark;
 }

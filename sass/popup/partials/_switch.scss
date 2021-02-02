@@ -2,20 +2,40 @@
 $hover: all 0.2s ease-in;
 $slide: all 0.4s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
 
+body:not(.EDK__body) {
+  .switch-onoff__slide {
+    box-shadow: inset 0 0 0 1px $color-very-dark;
+    background-color: $color-very-dark;
+
+    &.open {
+      .switch-onoff {
+        &__button {
+          background-color: $color-primary;
+        }
+      }
+    }
+  }
+
+  .switch-onoff__button {
+    background-color: $color-very-dark;
+  }
+}
+
 .switch-onoff__slide {
   display: inline-block;
   height: 24px;
   width: 48px;
-  box-shadow: inset 0 0 0 1px $color-very-dark;
+  box-shadow: inset 0 0 0 1px $color-very-dark--inverted;
   border-radius: 12px;
   transition: $hover;
   position: relative;
-  background-color: $color-very-dark;
+  background-color: $color-very-dark--inverted;
   cursor: pointer;
+
   &.open {
     .switch-onoff {
       &__button {
-        background-color: $color-primary;
+        background-color: $color-primary--inverted;
         transform: translateX(-24px);
       }
       &__light {
@@ -30,7 +50,7 @@ $slide: all 0.4s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
 
 .switch-onoff__button {
   display: block;
-  background-color: $color-very-dark;
+  background-color: $color-very-dark--inverted;
   width: 24px;
   height: 24px;
   border-radius: 13px;

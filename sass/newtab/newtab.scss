@@ -2,18 +2,12 @@
 @import "../global/**/*.scss";
 
 .transitions {
-  &, * {
-    transition: background-color .33s;
-  }
-
-  .typeahead {
-    transition: .33s;
-  }
-
-  .logo {
-    img {
-      transition: .33s;
-    }
+  .typeahead,
+  .logo img,
+  &,
+  * {
+    transition-property: opacity, border-color, background-color;
+    transition-duration: .33s;
   }
 }
 

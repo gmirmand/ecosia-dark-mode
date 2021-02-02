@@ -3,7 +3,8 @@
 
 body {
   &, * {
-    transition: background-color .2s;
+    transition-property: opacity, border-color, background-color;
+    transition-duration: .33s;
   }
 }
 
@@ -17,6 +18,10 @@ body {
 }
 
 body:not(.EDK__body) {
+  ::selection {
+    background-color: $color-primary;
+    color: $color-light;
+  }
 
   .search-section__mobile-learn-more {
     color: $color-light;
@@ -367,7 +372,7 @@ body:not(.EDK__body) {
     }
   }
 
-  .search-form-wrapper, .pill-inversed, .section-title-pill, .newsletter-form .newsletter-input, .input-wrapper {
+  .search-form, .search-form-wrapper, .pill-inversed, .section-title-pill, .newsletter-form .newsletter-input, .input-wrapper {
     &, & input {
       background-color: $color-light-dark;
       border-color: $color-light-dark;
@@ -599,7 +604,6 @@ body:not(.EDK__body) {
   .search-form {
     //border-color: $color-light-dark;
     color: $color-light;
-    background-color: transparent;
     border: none;
 
     & input {

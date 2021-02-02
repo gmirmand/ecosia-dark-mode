@@ -4,7 +4,11 @@
 
 
 .transitions {
-  transition: .33s;
+  &,
+  * {
+    transition-property: opacity, border-color, background-color;
+    transition-duration: .33s;
+  }
 }
 
 //ELEMENTS

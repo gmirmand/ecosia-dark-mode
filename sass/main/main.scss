@@ -9,11 +9,22 @@ body {
 }
 
 
-.search-section .content {
-  a {
-    img {
-      display: none;
-    }
+.search-section__logo {
+  position: relative;
+
+  img {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+  }
+
+  svg {
+    opacity: 1;
   }
 }
 
@@ -274,10 +285,6 @@ body:not(.EDK__body) {
     }
   }
 
-  &, * {
-    transition: background-color .33s;
-  }
-
   & .search-header, .notification-banner {
     background-color: $color-very-dark;
 
@@ -286,24 +293,17 @@ body:not(.EDK__body) {
     }
   }
 
-  .search-section .content {
-    background: transparent;
-    //background: linear-gradient($color-dark,$color-dark 90%,hsla(0,0%,100%,0)) bottom no-repeat;
-    a {
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
+  .search-section__logo {
+    img {
+      opacity: 1;
+    }
 
-      svg {
-        //display: none;
-      }
+    svg {
+      opacity: 0;
+    }
 
-      .type-st0 {
-        fill: #fff;
-      }
+    .type-st0 {
+      fill: #fff;
     }
   }
 
@@ -333,7 +333,6 @@ body:not(.EDK__body) {
 
   .close {
     background-color: lighten($color-dark, 15%);
-    transition: background-color .2s;
     color: $color-light;
 
     &:hover, &:focus {
@@ -486,7 +485,6 @@ body:not(.EDK__body) {
     border-color: $color-dark;
     box-shadow: 0 1px 4px 0 $color-very-dark;
     color: $color-light;
-    transition: .33s;
 
     &:hover {
       background-color: $color-very-dark;
@@ -631,7 +629,6 @@ body:not(.EDK__body) {
   .cta-wrapper a, .c-btn {
     background-color: $color-light-dark;
     border-color: $color-light-dark;
-    transition: all 0.33s ease;
 
     &:hover {
       background-color: darken($color-light-dark, 10%);

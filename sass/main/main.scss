@@ -371,10 +371,14 @@ body:not(.EDK__body) {
     }
   }
 
-  .search-form, .search-form-wrapper, .pill-inversed, .section-title-pill, .newsletter-form .newsletter-input, .input-wrapper {
+  .search-form-addon-button {
+    background-color: $color-light-dark;
+  }
+
+  .search-form-field, .search-form, .search-form-wrapper, .pill-inversed, .section-title-pill, .newsletter-form .newsletter-input, .input-wrapper {
     &, & input {
       background-color: $color-light-dark;
-      border-color: $color-light-dark;
+      border: none;
       border-radius: 10px;
       color: $color-light;
     }
@@ -576,7 +580,7 @@ body:not(.EDK__body) {
     }
   }
 
-  .tag-title {
+  .tag-title, .personal-counter__text {
     color: $color-light;
   }
 
@@ -591,12 +595,6 @@ body:not(.EDK__body) {
     &:hover {
       background-image: inherit;
     }
-  }
-
-
-  .search-form-field {
-    border-color: $color-light-dark;
-    background-color: $color-very-dark;
   }
 
   .search-form {

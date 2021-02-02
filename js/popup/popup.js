@@ -33,13 +33,7 @@ PopupEDK = {
             e.preventDefault();
             chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
                 chrome.tabs.sendRequest(tabs[0].id, {action: "switch"}, function (resp) {
-                    if (resp) {
-                        if (resp.done === "switch") {
-                            PopupEDK.switchBtn();
-                        } else {
-                            console.log(resp);
-                        }
-                    }
+                    PopupEDK.switchBtn();
                 });
             });
         });
@@ -141,7 +135,6 @@ PopupEDK = {
         });
     },
     showNoDomainAlert: function () {
-
         var tryConnection = new Promise(function (resolve, reject) {
             chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
                 chrome.tabs.sendRequest(tabs[0].id, {action: "testConnection"}, function (resp) {
@@ -163,7 +156,7 @@ PopupEDK = {
                 console.log(value);
             }).catch(
             function (error) {
-                console.log(error);
+                console.error(error);
                 $('.popup__disabled, .popup__container').toggleClass('d-none');
             }
         );

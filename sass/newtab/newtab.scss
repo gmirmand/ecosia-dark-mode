@@ -3,6 +3,10 @@
 
 body {
   background-color: $color-dark;
+
+  &, & div {
+    transition: background-color .33s;
+  }
 }
 
 .logo {
@@ -140,4 +144,8 @@ li {
   a {
     color: $color-light
   }
+}
+
+body.EDK__body {
+  background-color: #fff;
 }

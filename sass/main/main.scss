@@ -2,7 +2,7 @@
 @import "../global/**/*.scss";
 
 body {
-  &, & div {
+  &, * {
     transition: background-color .2s;
   }
 }
@@ -269,7 +269,7 @@ body:not(.EDK__body) {
     }
   }
 
-  &, & div {
+  &, * {
     transition: background-color .33s;
   }
 

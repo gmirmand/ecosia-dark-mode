@@ -13,6 +13,10 @@ main.General.prototype = {
         PopupEDK.showNoDomainAlert();
         PopupEDK.translations();
         PopupEDK.analytics();
+
+        setTimeout(function () {
+            $('body').addClass('transitions');
+        }, 333)
     }
 };
 

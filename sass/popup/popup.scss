@@ -2,13 +2,17 @@
 @import "../global/**/*.scss";
 @import "./partials/**/*.scss";
 
+
+.transitions {
+  transition: .33s;
+}
+
 //ELEMENTS
 .popup {
   &__body {
     padding: 3em 1.5em;
     text-align: center;
     min-width: 450px;
-    transition: .33s;
   }
 }
 

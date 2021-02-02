@@ -1,6 +1,6 @@
 {
   "name": "Ecosia Dark-Mode",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "A Dark-mode extension for ecosia",
   "manifest_version": 2,
   "default_locale": "en",

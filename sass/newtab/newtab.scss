@@ -1,55 +1,176 @@
 // Global sass
 @import "../global/**/*.scss";
 
-body {
+body:not(.EDK__body) {
   background-color: $color-dark;
 
+  .logo {
+    &--light {
+      opacity: 0;
+    }
+
+    &--dark {
+      opacity: 1;
+    }
+  }
+
+  .disclaimer, .disclaimer input, .pill-inversed, .pill-inversed input, .search-form-wrapper, .search-form-wrapper input, .section-title-pill, .section-title-pill input {
+    background-color: $color-very-dark !important;
+  }
+
+  .search-form {
+    border-color: $color-light-dark;
+
+    &, & input {
+      //background-color: $color-light-dark;
+      color: $color-light;
+
+      &::placeholder {
+        color: darken($color-light, 10%);
+      }
+    }
+  }
+
+  .search-form-wrapper, .pill-inversed, .disclaimer, .section-title-pill {
+    &, & input {
+      border-color: $color-light-dark;
+      color: $color-light;
+    }
+  }
+
+  .search-form-button {
+    background-color: transparent;
+
+    svg {
+      @include invert();
+    }
+  }
+
+  .newtab-item {
+    box-shadow: 0 0 6px 0 $color-very-dark;
+  }
+
+  .newtab-header {
+    background-color: $color-very-dark;
+    border-color: $color-very-dark;
+
+    .newtab-title {
+      color: $color-light;
+    }
+  }
+
+  li {
+    &:hover {
+      .newtab-header {
+        background-color: lighten($color-very-dark, 10%);
+        border-color: lighten($color-very-dark, 10%);
+      }
+    }
+  }
+
+  .newtab-remove {
+    background-color: transparent;
+
+    svg {
+      @include invert();
+    }
+  }
+
+  .typeahead {
+    background-color: $color-very-dark;
+    border-color: $color-dark;
+    box-shadow: 0 1px 4px 0 $color-very-dark;
+    color: $color-light;
+
+    &:hover {
+      background-color: $color-very-dark;
+      border-color: $color-dark;
+    }
+
+    li {
+      background-color: $color-light-dark;
+      border-color: $color-dark;
+
+      &.suggestion-item {
+        border-color: $color-very-dark;
+      }
+
+      &, &:hover, &:active, &:focus, &:visited, &.selected {
+        color: $color-light;
+        border-color: $color-light-dark !important;
+        background-color: $color-dark;
+
+        a {
+          color: $color-light;
+        }
+      }
+
+      &:hover, &:active, &:focus, &:visited {
+        background-color: $color-light-dark;
+      }
+
+      .suggestion-highlight {
+        color: $color-light;
+      }
+
+      a.suggestion-link {
+        color: $color-light;
+      }
+    }
+
+    .link, .entry {
+      &:hover {
+        background-color: $color-very-dark;
+      }
+    }
+  }
+
+  .infos {
+    color: $color-light;
+
+    a {
+      color: $color-light
+    }
+  }
+}
+
+body {
   &, & div {
     transition: background-color .33s;
   }
 }
 
 .logo {
+  position: relative;
+
+  &--light {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    opacity: 1;
+  }
+
+  &--dark {
+    opacity: 0;
+  }
+
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-  }
-}
-
-.disclaimer, .disclaimer input, .pill-inversed, .pill-inversed input, .search-form-wrapper, .search-form-wrapper input, .section-title-pill, .section-title-pill input {
-  background-color: $color-very-dark !important;
-}
-
-.search-form {
-  border-color: $color-light-dark;
-  &, & input {
-    //background-color: $color-light-dark;
-    color: $color-light;
-    &::placeholder {
-      color: darken($color-light, 10%);
-    }
+    transition: .33s;
   }
 }
 
 .search-form-wrapper, .pill-inversed, .disclaimer, .section-title-pill {
   &, & input {
     background-color: transparent;
-    border-color: $color-light-dark;
     border-radius: 10px;
-    color: $color-light;
-  }
-}
-
-.search-form-button {
-  background-color: transparent;
-  svg {
-    @include invert();
   }
 }
 
 .newtab-item {
-  box-shadow: 0 0 6px 0 $color-very-dark;
   opacity: 0.7;
 }
 
@@ -58,94 +179,18 @@ body {
   display: none;
 }
 
-.newtab-header {
-  background-color: $color-very-dark;
-  border-color: $color-very-dark;
-
-  .newtab-title {
-    color: $color-light;
-  }
-}
-
 .newtab-page .help-button .help-button-tooltip, .help-button, .help-button-arrow {
   display: none !important;
 }
 
-li {
-  &:hover {
-    .newtab-header {
-      background-color: lighten($color-very-dark, 10%);
-      border-color: lighten($color-very-dark, 10%);
-    }
-  }
-}
-
-.newtab-remove {
-  background-color: transparent;
-
-  svg {
-    @include invert();
-  }
-}
-
 .typeahead {
-  background-color: $color-very-dark;
-  border-color: $color-dark;
-  box-shadow: 0 1px 4px 0 $color-very-dark;
-  color: $color-light;
   transition: .33s;
-
-  &:hover {
-    background-color: $color-very-dark;
-    border-color: $color-dark;
-  }
-
-  li {
-    background-color: $color-light-dark;
-    border-color: $color-dark;
-    &.suggestion-item {
-      border-color: $color-very-dark;
-    }
-
-    &, &:hover, &:active, &:focus, &:visited, &.selected {
-      color: $color-light;
-      border-color: $color-light-dark !important;
-      background-color: $color-dark;
-      a {
-        color: $color-light;
-      }
-    }
-    &:hover, &:active, &:focus, &:visited {
-      background-color: $color-light-dark;
-    }
-
-    .suggestion-highlight {
-      color: $color-light;
-    }
-    a.suggestion-link {
-      color: $color-light;
-    }
-  }
-  .link, .entry {
-    &:hover {
-      background-color: $color-very-dark;
-    }
-  }
 }
 
 .infos {
-  color: $color-light;
-  opacity: 0.2;
+  opacity: 0.7;
   padding: 1em 2em;
   box-sizing: border-box;
   font-size: 0.8rem;
   font-weight: 300;
-
-  a {
-    color: $color-light
-  }
-}
-
-body.EDK__body {
-  background-color: #fff;
 }

@@ -17,6 +17,29 @@ body {
 }
 
 body:not(.EDK__body) {
+
+  .search-section__mobile-learn-more {
+    color: $color-light;
+  }
+
+  .info-section__background {
+    *, path, {
+      color: $color-light-dark;
+    }
+  }
+
+  .above-fold-cta-section {
+    background-color: $color-dark;
+  }
+
+  .search-section__content {
+    background-color: $color-dark;
+
+    @media only screen and (min-width: 768px) {
+      background: linear-gradient($color-dark, $color-dark 90%, hsla(0, 0%, 100%, 0)) bottom no-repeat;
+    }
+  }
+
   :focus {
     outline-color: $color-light;
     box-shadow: none;

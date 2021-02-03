@@ -18,8 +18,8 @@ $slide: all 0.4s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
 
 body:not(.EDK__body) {
   .switch-onoff__slide {
-    box-shadow: inset 0 0 0 1px $color-very-dark;
-    background-color: $color-very-dark;
+    box-shadow: inset 0 0 0 1px $color-very-light-dark;
+    background-color: $color-very-light-dark;
 
     &.open {
       .switch-onoff {
@@ -64,6 +64,7 @@ body:not(.EDK__body) {
 }
 
 .switch-onoff__button {
+  transform: scale(1.2);
   display: block;
   background-color: $color-very-dark--inverted;
   width: 24px;
@@ -73,6 +74,7 @@ body:not(.EDK__body) {
   right: 0;
   top: 0;
   backface-visibility: hidden;
+  user-select: none;
 
   img {
     position: absolute;
@@ -83,6 +85,7 @@ body:not(.EDK__body) {
     bottom: 0;
     left: 0;
     right: 0;
+    filter: drop-shadow(0px 0px 4px $color-primary);
 
     &.switch-onoff__light {
       opacity: 0;

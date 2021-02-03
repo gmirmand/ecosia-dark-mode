@@ -18,6 +18,14 @@
     text-align: center;
     min-width: 450px;
   }
+
+  &__main {
+    .alert {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 body:not(.EDK__body) {

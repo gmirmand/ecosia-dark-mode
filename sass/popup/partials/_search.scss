@@ -27,7 +27,7 @@ body:not(.EDK__body) {
 
 .search {
   &__container {
-    margin-top: 20px;
+    margin: 2em 0;
 
     form {
       margin: 0;
@@ -72,7 +72,7 @@ body:not(.EDK__body) {
       background-image: linear-gradient(top, lighten($color-very-dark--inverted, 1%), lighten($color-very-dark--inverted, 2%));
       border: 1px solid transparent;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-      color: rgba($color-light--inverted, 0.7);
+      color: rgba($color-dark-light--inverted, 0.7);
     }
   }
 

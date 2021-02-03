@@ -32,11 +32,13 @@ var paths = {
     js: {
         src: {
             vendors: './js/vendors/**/*.js',
+            global: './js/global/*.js',
             main: './js/main/*.js',
             popup: './js/popup/*.js',
             newtab: './js/newtab/*.js',
         },
         watch: {
+            global: './js/global/*.js',
             main: './js/main/*.js',
             popup: './js/popup/*.js',
             newtab: './js/newtab/*.js',
@@ -44,6 +46,8 @@ var paths = {
     },
     dest: {
         main: './dist/',
+        css: './dist/css/',
+        js: './dist/js/',
         compile: './compile/'
     }
 };
@@ -62,7 +66,7 @@ function styleMain() {
             .pipe(cleanCSS())
             .pipe(sourcemaps.write())
             .on("error", sass.logError)
-            .pipe(gulp.dest(paths.dest.main))
+            .pipe(gulp.dest(paths.dest.css))
     );
 }
 
@@ -80,7 +84,7 @@ function stylePopup() {
             .pipe(cleanCSS())
             .pipe(sourcemaps.write())
             .on("error", sass.logError)
-            .pipe(gulp.dest(paths.dest.main))
+            .pipe(gulp.dest(paths.dest.css))
     );
 }
 
@@ -98,7 +102,7 @@ function styleNewtab() {
             .pipe(cleanCSS())
             .pipe(sourcemaps.write())
             .on("error", sass.logError)
-            .pipe(gulp.dest(paths.dest.main))
+            .pipe(gulp.dest(paths.dest.css))
     );
 }
 
@@ -108,7 +112,19 @@ function javascriptVendors() {
         .pipe(concat('vendors.js'))
         .pipe(uglify())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(paths.dest.main));
+        .pipe(gulp.dest(paths.dest.js));
+}
+
+function javascriptGlobal() {
+    return gulp
+        .src(paths.js.src.global)
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'))
+        .pipe(sourcemaps.init())
+        .pipe(concat('global.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.dest.js));
 }
 
 function javascriptMain() {
@@ -120,7 +136,7 @@ function javascriptMain() {
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(paths.dest.main));
+        .pipe(gulp.dest(paths.dest.js));
 }
 
 function javascriptPopup() {
@@ -132,7 +148,7 @@ function javascriptPopup() {
         .pipe(concat('popup.js'))
         .pipe(uglify())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(paths.dest.main));
+        .pipe(gulp.dest(paths.dest.js));
 }
 
 function javascriptNewtab() {
@@ -144,7 +160,7 @@ function javascriptNewtab() {
         .pipe(concat('newtab.js'))
         .pipe(uglify())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(paths.dest.main));
+        .pipe(gulp.dest(paths.dest.js));
 }
 
 function watch() {
@@ -153,18 +169,19 @@ function watch() {
     gulp.watch(paths.sass.watch.newtab, styleNewtab);
     gulp.watch(paths.sass.watch.main, styleMain);
     gulp.watch([paths.js.watch.main, paths.js.watch.popup, paths.js.watch.newtab], javascriptVendors);
+    gulp.watch(paths.js.watch.global, javascriptGlobal);
     gulp.watch(paths.js.watch.main, javascriptMain);
     gulp.watch(paths.js.watch.popup, javascriptPopup);
     gulp.watch(paths.js.watch.newtab, javascriptNewtab);
 }
 
-gulp.task('default', gulp.series(stylePopup, styleMain, styleNewtab, javascriptVendors, javascriptMain, javascriptNewtab, javascriptPopup));
+gulp.task('default', gulp.series(stylePopup, styleMain, styleNewtab, javascriptVendors, javascriptGlobal, javascriptMain, javascriptNewtab, javascriptPopup));
 
 async function compile() {
     gulp.src([
         paths.dest.main + '/**'
     ])
-        .pipe(zip(packageInfos.name + '-' + new Date().getTime() + '-v' + packageInfos.version.replace(/\./g,'') + '.zip'))
+        .pipe(zip(packageInfos.name + '-' + new Date().getTime() + '-v' + packageInfos.version.replace(/\./g, '') + '.zip'))
         .pipe(gulp.dest(paths.dest.compile))
 }
 
@@ -174,6 +191,7 @@ exports.styleNewtab = styleNewtab;
 exports.javascriptVendors = javascriptVendors;
 exports.javascriptPopup = javascriptVendors;
 exports.javascriptNewtab = javascriptNewtab;
+exports.javascriptGlobal = javascriptGlobal;
 exports.javascriptMain = javascriptMain;
 exports.watch = watch;
 exports.compile = compile;

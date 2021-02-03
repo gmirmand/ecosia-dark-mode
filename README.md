@@ -22,14 +22,19 @@ Gulp takes care of compiling into .css and .js files properly.
 
 ### Explanation of compiled files
 #### JS 
-> vendors.js (use everywhere) < Contains used js libraries such as jquery  
-> main.js (use on the page)  
-> popup.js (use in the popup)  
+> `global.js` (use everywhere)  
+> `main.js` (use on the \*.ecosia.* pages)  
+> `newtab.js` (use in the new tab page)  
+> `popup.js` (use in the popup)  
+> `vendors.js` (use everywhere) < Contains used js libraries such as jquery  
+> `ecosia/main.js` (use in the new tab page) < native ecosia script  
 
    
 #### CSS 
-> main.css (use for overwrite page css)  
-> popup.css (css of the popup)  
+> `main.css` (use for overwrite page css)  
+> `newtab.css` (css of the new tab page)  
+> `popup.css` (css of the popup)
+> `ecosia/main.css` (use in the new tab page) < native ecosia style
 
 **NOTE** : Both .css include "global" folder with globals scss vars/mixins/helpers
 

@@ -3,11 +3,12 @@
 <head>
     <meta http-equiv="Content-Security-Policy"
           content="default-src *; style-src 'self' http://* https://* 'unsafe-inline'; script-src 'self' http://* https://* 'unsafe-inline' 'unsafe-eval'"/>
-    <link rel="stylesheet" type="text/css" href="popup.css">
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="vendors.js"></script>
-    <script src="popup.js"></script>
+    <script src="js/vendors.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/popup.js"></script>
     <title data-i18n="title"></title>
 </head>
 <body class="popup__body">
@@ -66,6 +67,11 @@
         </div>
         <div class="alert alert-success" data-i18n="alert_thanks" role="alert"></div>
         <div class="alert alert-warning" data-i18n="alert_keep_offi" role="alert"></div>
+        <div class="alert alert-primary" role="alert">
+            <p data-i18n="donate_message__reduced"></p>
+            <a href="https://paypal.me/GMirmand" class="btn btn-primary donate__link" data-i18n="donate_button"
+               target="_blank"></a>
+        </div>
     </div>
 </div>
 </body>

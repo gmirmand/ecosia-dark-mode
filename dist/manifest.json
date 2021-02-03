@@ -21,11 +21,12 @@
         "https://*.ecosia.org/*"
       ],
       "css": [
-        "main.css"
+        "css/main.css"
       ],
       "js": [
-        "vendors.js",
-        "main.js"
+        "js/vendors.js",
+        "js/global.js",
+        "js/main.js"
       ]
     }
   ],

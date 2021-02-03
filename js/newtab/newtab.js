@@ -1,20 +1,19 @@
 // Declare namespace
-var main = main || {};
+var newtab = newtab || {};
 
-main.General = function () {
+newtab.General = function () {
 };
 
-main.General.prototype = {
+newtab.General.prototype = {
     init: function () {
         NewTabEDK.init();
         NewTabEDK.translations();
         NewTabEDK.PopupListener();
-        NewTabEDK.DonateLink();
     }
 };
 
 $(document).ready(function () {
-    var g = new main.General();
+    var g = new newtab.General();
     g.init();
 });
 
@@ -79,9 +78,5 @@ NewTabEDK = {
                 }
             }
         );
-    },
-    DonateLink: function () {
-        var language = navigator.language.replace('-', '_');
-        $('.donate__link').attr("href", 'https://paypal.me/GMirmand?locale.x=' + language || '');
     }
 };

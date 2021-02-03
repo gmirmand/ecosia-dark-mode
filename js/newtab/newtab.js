@@ -9,6 +9,7 @@ newtab.General.prototype = {
         NewTabEDK.init();
         NewTabEDK.translations();
         NewTabEDK.PopupListener();
+        NewTabEDK.analytics();
     }
 };
 
@@ -41,7 +42,6 @@ NewTabEDK = {
         return chrome.i18n.getMessage(key);
     },
     toggleDK: function (state) {
-        console.log(state);
         if (state === true) {
             $('body').addClass('EDK__body');
         } else if (state === false) {
@@ -79,5 +79,26 @@ NewTabEDK = {
                 }
             }
         );
+    },
+    analytics: function () {
+        NewTabEDK.service = analytics.getService('ecosia_extension');
+
+        NewTabEDK.service.getConfig().addCallback(
+            function (config) {
+                chrome.storage.sync.get(['rgpd_consent'], function (result) {
+                    var permitted = result.rgpd_consent;
+                    config.setTrackingPermitted(permitted === true);
+                });
+            });
+
+        NewTabEDK.tracker = NewTabEDK.service.getTracker('UA-160182955-1');  // GA Tracking ID.
+
+        NewTabEDK.tracker.sendAppView('NewTabView');
+
+        NewTabEDK.tracker.sendEvent('New tab', 'Open', "L'utilisateur a ouvert un nouvel onglet");
+
+        $('.donate__link').on('click', function () {
+            NewTabEDK.tracker.sendEvent('New tab', 'Donate', "L'utilisateur a cliqué sur le bouton de donation");
+        })
     }
 };

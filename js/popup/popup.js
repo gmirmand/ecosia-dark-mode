@@ -213,5 +213,9 @@ PopupEDK = {
         PopupEDK.tracker.sendAppView('MainView');
 
         PopupEDK.tracker.sendEvent('Popup', 'Open', "L'utilisateur a ouvert la popup");
+
+        $('.donate__link').on('click', function () {
+            PopupEDK.tracker.sendEvent('Popup', 'Donate', "L'utilisateur a cliqué sur le bouton de donation");
+        })
     }
 };

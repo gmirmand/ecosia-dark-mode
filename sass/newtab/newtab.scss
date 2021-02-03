@@ -6,7 +6,7 @@
   .logo img,
   &,
   * {
-    transition-property: opacity, border-color, background-color;
+    transition-property: opacity, border-color, background-color, color;
     transition-duration: .33s;
   }
 }

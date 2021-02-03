@@ -32,5 +32,11 @@
   },
   "alert_rgpd_decline": {
     "message": "Refuser"
+  },
+  "donate_message": {
+    "message": "Cela fait plus de 2 ans que je développe cette extension. J'avais jusqu'à présent renoncé à chercher à me rémunérer grâce à celle-ci et offrir gratuitement cette extension à la communauté. J'ai finalement décidé de partager un bouton de donation afin de pouvoir plus m'investir dans le développement de celle-ci. Libre à vous de donner 0.1, 1 ou 5, dans tous les cas je vous remercie énormément pour le soutien !"
+  },
+  "donate_button": {
+    "message": "Faire un don"
   }
 }

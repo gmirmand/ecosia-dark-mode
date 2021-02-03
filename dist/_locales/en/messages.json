@@ -32,5 +32,11 @@
   },
   "alert_rgpd_decline": {
     "message": "Decline"
+  },
+  "donate_message": {
+    "message": "I have been developing this extension for more than 2 years. Until now, I had given up trying to pay myself thanks to it and offer this extension to the community for free. I finally decided to share a donation button in order to be able to invest more in the development of this extension. Feel free to give 0.1, 1 or 5, in any case I thank you very much for the support!"
+  },
+  "donate_button": {
+    "message": "Donate"
   }
 }

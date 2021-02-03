@@ -9,6 +9,7 @@ main.General.prototype = {
         NewTabEDK.init();
         NewTabEDK.translations();
         NewTabEDK.PopupListener();
+        NewTabEDK.DonateLink();
     }
 };
 
@@ -78,5 +79,9 @@ NewTabEDK = {
                 }
             }
         );
+    },
+    DonateLink: function () {
+        var language = navigator.language.replace('-', '_');
+        $('.donate__link').attr("href", 'https://paypal.me/GMirmand?locale.x=' + language || '');
     }
 };

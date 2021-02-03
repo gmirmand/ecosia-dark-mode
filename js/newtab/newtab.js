@@ -22,7 +22,7 @@ var NewTabEDK;
 NewTabEDK = {
     init: function () {
         chrome.storage.sync.get(['dk'], function (item) {
-            NewTabEDK.toggleDK(item.dk !== 'enabled');
+            NewTabEDK.toggleDK(item.dk === 'disabled');
         });
 
         setTimeout(function () {
@@ -41,6 +41,7 @@ NewTabEDK = {
         return chrome.i18n.getMessage(key);
     },
     toggleDK: function (state) {
+        console.log(state);
         if (state === true) {
             $('body').addClass('EDK__body');
         } else if (state === false) {

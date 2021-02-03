@@ -173,7 +173,7 @@ PopupEDK = {
             }).catch(
             function (error) {
                 console.error(error);
-                $('.popup__disabled, .popup__container').toggleClass('d-none');
+                $('.popup__not-on-domain-warning').toggleClass('d-none');
             }
         );
     },

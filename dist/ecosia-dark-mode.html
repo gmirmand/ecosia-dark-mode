@@ -13,7 +13,7 @@
 </head>
 
 <body class="popup__body">
-<div class="popup__container">
+<div class="popup__on-domain-warning">
     <div class="warning__container">
         <div class="alert alert-info" data-alert-id="alert-2" role="alert">
             <p data-i18n="alert_rgpd"></p>
@@ -26,15 +26,6 @@
         </div>
     </div>
 
-    <div class="alert alert-primary" data-alert-id="alert-3" role="alert">
-        <p data-i18n="donate_message__reduced"></p>
-        <a href="https://paypal.me/GMirmand" class="btn btn-primary donate__link" data-i18n="donate_button"
-           target="_blank"></a>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-
     <div class="warning__container d-none">
         <div class="alert alert-warning" data-alert-id="alert-1" role="alert">
             <span data-i18n="alert_keep_offi"></span>
@@ -43,7 +34,12 @@
             </button>
         </div>
     </div>
+</div>
 
+<div class="popup__not-on-domain-warning d-none">
+</div>
+
+<div class="popup__main">
     <div class="switch-onoff__container">
           <span class="switch-onoff__slide">
             <i class="switch-onoff__button">
@@ -52,6 +48,9 @@
             </i>
           </span>
     </div>
+
+    <div class="switch-onoff__disabled-message" data-i18n=""></div>
+
     <div class="search__container">
         <form action="https://www.google.com/search" method="get" id="google-search">
             <label>
@@ -63,31 +62,11 @@
             <span data-i18n="search_explain"></span>
         </div>
     </div>
-</div>
 
-<div class="popup__disabled d-none">
-    <div class="warning__container">
-        <div class="alert alert-success" data-i18n="alert_thanks" role="alert"></div>
-
-        <div class="warning__container">
-            <div class="alert alert-info" data-alert-id="alert-2" role="alert">
-                <p data-i18n="alert_rgpd"></p>
-                <button type="button" data-dismiss="alert" data-agree="true" aria-label="Close" class="btn btn-success">
-                    <span aria-hidden="true" data-i18n="alert_rgpd_agree"></span>
-                </button>
-                <button type="button" data-dismiss="alert" data-agree="false" aria-label="Close" class="btn btn-link">
-                    <span aria-hidden="true" data-i18n="alert_rgpd_decline"></span>
-                </button>
-            </div>
-        </div>
-
-        <div class="alert alert-warning" data-i18n="alert_keep_offi" role="alert"></div>
-
-        <div class="alert alert-primary" data-alert-id="alert-3" role="alert">
-            <p data-i18n="donate_message__reduced"></p>
-            <a href="https://paypal.me/GMirmand" class="btn btn-primary donate__link" data-i18n="donate_button"
-               target="_blank"></a>
-        </div>
+    <div class="alert alert-primary" data-alert-id="alert-3" role="alert">
+        <p data-i18n="donate_message__reduced"></p>
+        <a href="https://paypal.me/GMirmand" class="btn btn-primary donate__link" data-i18n="donate_button"
+           target="_blank"></a>
     </div>
 </div>
 </body>

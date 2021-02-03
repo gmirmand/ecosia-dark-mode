@@ -28,7 +28,7 @@ NewTabEDK = {
 
         setTimeout(function () {
             $('body').addClass('transitions');
-        }, 333)
+        }, 333);
     },
     translations: function () {
         var translate_elmts = $("[data-i18n]");

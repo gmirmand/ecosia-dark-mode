@@ -19,7 +19,7 @@ body:not(.EDK__body) {
         border: unset;
         outline: unset;
         background-color: lighten($color-very-dark, 1%);
-        background-image: linear-gradient(top, lighten($color-very-dark, 1%), lighten($color-very-dark, 2%));
+        background-image: linear-gradient(to bottom, lighten($color-very-dark, 1%), lighten($color-very-dark, 2%));
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
         color: rgba($color-light, 0.7);
       }
@@ -81,7 +81,7 @@ body:not(.EDK__body) {
       border: unset;
       outline: unset;
       background-color: lighten($color-very-dark--inverted, 1%);
-      background-image: linear-gradient(top, lighten($color-very-dark--inverted, 1%), lighten($color-very-dark--inverted, 2%));
+      background-image: linear-gradient(to bottom, lighten($color-very-dark--inverted, 1%), lighten($color-very-dark--inverted, 2%));
       border: 1px solid transparent;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
       color: rgba($color-dark-light--inverted, 0.7);

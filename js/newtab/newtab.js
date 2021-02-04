@@ -99,6 +99,6 @@ NewTabEDK = {
 
         $('.donate__link').on('click', function () {
             NewTabEDK.tracker.sendEvent('New tab', 'Donate', "L'utilisateur a cliqué sur le bouton de donation");
-        })
+        });
     }
 };

@@ -16,7 +16,7 @@ main.General.prototype = {
 
         setTimeout(function () {
             $('body').addClass('transitions');
-        }, 333)
+        }, 333);
     }
 };
 
@@ -216,6 +216,6 @@ PopupEDK = {
 
         $('.donate__link').on('click', function () {
             PopupEDK.tracker.sendEvent('Popup', 'Donate', "L'utilisateur a cliqué sur le bouton de donation");
-        })
+        });
     }
 };

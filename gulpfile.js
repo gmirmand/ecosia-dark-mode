@@ -59,7 +59,6 @@ function styleMain() {
             .pipe(sassGlob())
             .pipe(sass())
             .pipe(autoprefixer({
-                browsers: ['last 2 versions'],
                 cascade: false
             }))
             .pipe(sourcemaps.init())
@@ -77,7 +76,6 @@ function stylePopup() {
             .pipe(sassGlob())
             .pipe(sass())
             .pipe(autoprefixer({
-                browsers: ['last 2 versions'],
                 cascade: false
             }))
             .pipe(sourcemaps.init())
@@ -95,7 +93,6 @@ function styleNewtab() {
             .pipe(sassGlob())
             .pipe(sass())
             .pipe(autoprefixer({
-                browsers: ['last 2 versions'],
                 cascade: false
             }))
             .pipe(sourcemaps.init())

@@ -197,3 +197,58 @@ body:not(.EDK__body) {
     padding: 0;
   }
 }
+
+.newtab-page {
+  &__tuto {
+    z-index: 999;
+    width: 33vw;
+    max-width: 500px;
+    box-shadow: 0 0 16px 8px rgba($color-primary,0.25);
+    top: 3.5em;
+    right: 2em;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__tuto-close {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: bold;
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  &__tuto-arrow {
+    transform: translate(0, -50%) rotate(180deg);
+    position: absolute;
+    top: 0;
+    left: 80%;
+    height: 2.5em !important;
+    width: 2.5em !important;
+    animation: MoveUpDown 1s ease-in-out infinite;
+  }
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    transform: translate(0, -125%) rotate(180deg);
+  }
+  50% {
+    transform: translate(0, -75%) rotate(180deg);
+  }
+}

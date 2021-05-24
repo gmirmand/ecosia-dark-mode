@@ -10,6 +10,7 @@ newtab.General.prototype = {
         NewTabEDK.translations();
         NewTabEDK.PopupListener();
         NewTabEDK.analytics();
+        NewTabEDK.tuto();
     }
 };
 
@@ -53,7 +54,6 @@ NewTabEDK = {
     PopupListener: function () {
         chrome.extension.onRequest.addListener(
             function (request, sender, sendResponse) {
-                console.log(request.action);
                 switch (request.action) {
                     case "switch":
                         NewTabEDK.toggleDK();
@@ -100,5 +100,17 @@ NewTabEDK = {
         $('.donate__link').on('click', function () {
             NewTabEDK.tracker.sendEvent('New tab', 'Donate', "L'utilisateur a cliqué sur le bouton de donation");
         });
+    },
+    tuto: function() {
+        var tutoPlayed = localStorage.getItem('tutoPlayed');
+
+        $('.newtab-page__tuto-close').on('click', function () {
+            localStorage.setItem('tutoPlayed', true);
+            $('.newtab-page__tuto').addClass('hidden');
+        });
+
+        if(!tutoPlayed) {
+            $('.newtab-page__tuto').removeClass('hidden');
+        }
     }
 };

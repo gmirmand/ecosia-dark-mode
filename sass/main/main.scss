@@ -130,7 +130,7 @@ body:not(.EDK__body) {
     background-color: transparent !important;
   }
 
-  input:-internal-autofill-selected, .custom-select-trigger, .custom-select:after, .form input[type=email], .form input[type=password], .form input[type=text], .form input[type=url], .form select, .form textarea {
+  .main-header-wrapper, .custom-select-trigger, .custom-select:after, .form input[type=email], .form input[type=password], .form input[type=text], .form input[type=url], .form select, .form textarea {
     background-color: $color-very-dark;
     border-color: $color-very-dark;
     color: $color-secondary;
@@ -184,6 +184,10 @@ body:not(.EDK__body) {
     &.link:hover {
       background-color: $color-dark;
     }
+  }
+
+  .locale-bar__close-button {
+    @include grayscale();
   }
 
   .modal-dialog, .personal-counter__dropdown, .popover, .card-productads, .js-notifications-banner .notifications-banner, .card-mobile, .navbar-container, .c-post-card {
@@ -682,15 +686,32 @@ body:not(.EDK__body) {
     }
   }
 
-  .btn-primary {
-    background-color: $color-very-dark;
+  .btn-primary, .button, .locale-bar__button {
+    background-color: $color-very-dark !important;
 
     &:hover {
-      background-color: #000;
+      background-color: #000 !important;
     }
   }
 
-  .btn {
+  h1, h2, h3, h4, h5, h6, .default-style .section-title, .default-style h1, .default-style h2, .default-style h3, .default-style h4, .default-style h5, .default-style h6, .section-title, .contrast-style .product-list-item-title, .contrast-style .section-title, .contrast-style h1, .contrast-style h2, .contrast-style h3, .contrast-style h4, .contrast-style h5, .contrast-style h6  {
+    color: $color-primary;
+  }
+
+  .contrast-style {
+    background-color: #000;
+  }
+
+  #shopify-privacy-banner-div button.decline {
+    background-color: $color-primary;
+    color: #fff;
+  }
+
+  .footer-wrapper {
+    background-color: $color-very-dark;
+  }
+
+  .btn, .button {
     color: $color-light;
 
     &:disabled {
@@ -714,6 +735,19 @@ body:not(.EDK__body) {
 
   .settings-headline, .form-with-labels {
     color: $color-primary;
+  }
+
+  #shopify-privacy-banner-div {
+    background-color: $color-very-dark;
+    color: $color-secondary;
+  }
+
+  .locale-bar__container {
+    background-color: $color-dark !important;
+  }
+
+  #shopify-privacy-banner-div h3, .locale-bar__message {
+    color: $color-secondary !important;
   }
 
 }

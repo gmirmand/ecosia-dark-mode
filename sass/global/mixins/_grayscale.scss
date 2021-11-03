@@ -5,7 +5,7 @@
 @mixin invert() {
   filter: brightness(0) invert(1);
   color: $color-light;
-  z-index: -1;
+  //z-index: -1;
 }
 
 @mixin whitify() {

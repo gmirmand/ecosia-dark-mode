@@ -6,10 +6,6 @@ They have a free browser extension for you to save the planet: https://bit.ly/2x
   
 [Chrome extension](https://chrome.google.com/webstore/detail/ecosia-dark-mode/lpgjbchlhnpodjjnemfpfajibnclknam?hl=fr) - [Edge extension](https://microsoftedge.microsoft.com/addons/detail/ecosia-darkmode/gebncindnlemmhnigjhkgdfcmaakjcio)
 
-# Motivation
-
-Because Dark-mode is cool
-
 # Installation
 
 It is a very basic chrome extension, enjoy the Chrome documentation to help you.

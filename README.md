@@ -42,13 +42,12 @@ For the HTML of the popup, it's simply in ecosia-dark-mode.html
 
 # Contributors
 
-* G. Mirmand #Huroy (developer) | [Twitter](https://twitter.com/Huroyy) | [GitHub](https://github.com/gmirmand)  
-* Cobra (le sang)
-* G. Allary (Paint professional)
+* G. Mirmand #Huroy (developer) | [GitHub](https://github.com/gmirmand)  
+* G. Allary (design)
+* T. Cobra (concept)
 
 # Ideas
 
-* A simple switch to activate / deactivate (WIP)
 * Switch to allow dark mode to activate itself from a certain time
   * Propose to choose activation slots
 * Choose the color variables

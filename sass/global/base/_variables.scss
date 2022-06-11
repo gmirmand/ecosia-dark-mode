@@ -4,9 +4,15 @@ $color-very-dark : darken($color-dark, 5%);
 $color-light-dark : lighten($color-dark, 5%);
 $color-very-light-dark : lighten($color-dark, 10%);
 $color-light: lighten($color-dark, 75%);
-$color-dark-light: #666;
+$color-dark-light: #b6b6b6;
 $color-primary: #16877F;
-$color-secondary: #91A5C6;
+$color-primary-dark: darken($color-primary, 5%);
+$color-primary-very-light: lighten($color-primary, 15%);
+$color-primary-light: lighten($color-primary, 5%);
+$color-secondary: #cbbc6d;
+$color-tertiary: #5d7696;
+$color-tertiary-light: lighten($color-tertiary, 5%);
+$color-tertiary-dark: darken($color-tertiary, 5%);
 
 $color-dark--inverted : #fff;
 $color-very-dark--inverted : darken($color-dark--inverted, 5%);

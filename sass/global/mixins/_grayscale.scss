@@ -11,3 +11,7 @@
 @mixin whitify() {
   filter: brightness(0) invert(1);
 }
+
+@mixin sepia() {
+  filter: sepia(60%);
+}
